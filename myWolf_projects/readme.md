@@ -215,7 +215,7 @@ The `ISO` formatted timestamps can be parsed...<br>
 ### Update to `Absolute Time` by accessing the DOM
 
 - 1. DOM = Document Object Model: <br>
-The `DOM` is how a webpage's HTML is structured. The `tags` within a webpage: <div>, <a>, <tr>, etc are `nodes` with parent and child-sibling relationships. <br>
+The `DOM` is how a webpage's HTML is structured. The `tags` within a webpage: `<div>`, `<a>`, `<tr>`, etc are `nodes` with parent and child-sibling relationships. <br>
 
 
 `SyntaxError: Unexpected identifier` <br>
