@@ -202,3 +202,7 @@ bisect.insort(prefix_sums, current_sum)
 
 ## Test Case image
 ![Test Case Screenshot](assessment_screenshots/maxsubarraysum.png)
+
+## Noted sources
+
+- https://docs.python.org/3/library/bisect.html
