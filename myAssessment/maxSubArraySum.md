@@ -20,13 +20,13 @@ m = 2
 
 The following table lists all subarrays and their moduli:  <br>
 ```
-	   sum  %2
+	        sum    %2
 [1]		1	1
 [2]		2	0
 [3]		3	1
-[1,2]	3	1
-[2,3]	5	1
-[1,2,3]	6	0
+[1,2]	        3	1
+[2,3]	        5	1
+[1,2,3]	        6	0
 ```
 <br>
 
