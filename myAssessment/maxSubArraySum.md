@@ -20,13 +20,13 @@ m = 2
 
 The following table lists all subarrays and their moduli:  <br>
 ```
-	        sum    %2
+	   sum  %2
 [1]		1	1
 [2]		2	0
 [3]		3	1
-[1,2]	        3	1
-[2,3]	        5	1
-[1,2,3]	        6	0
+[1,2]	3	1
+[2,3]	5	1
+[1,2,3]	6	0
 ```
 <br>
 
@@ -202,7 +202,3 @@ bisect.insort(prefix_sums, current_sum)
 
 ## Test Case image
 ![Test Case Screenshot](assessment_screenshots/maxsubarraysum.png)
-
-## Noted sources
-
-- https://docs.python.org/3/library/bisect.html
