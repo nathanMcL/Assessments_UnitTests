@@ -17,6 +17,7 @@ The following figure is a sample map of HackerLand where the dotted lines denote
 ![Hackerland](assessment_screenshots/hackerland_cities_libraries.png) 
 
 <br>
+
 `c_road = 2` <br>
 `c_lib = 3` <br>
 `cities = [[1,7], [1,3], [1,2], [2,3], [5,6], [6,8]]` <br>
