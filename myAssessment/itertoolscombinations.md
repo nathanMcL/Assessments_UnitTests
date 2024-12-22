@@ -62,7 +62,7 @@ HK
 ## Test Results
 
 To test this script, there is a test file named: `itertool_input.txt` in the same directory. <br>
-Run the this script with the following command: <br>
+Run this script with the following command: <br>
 
 `python3 IterTools_Combinations.py < itertool_input.txt` <br>
 
