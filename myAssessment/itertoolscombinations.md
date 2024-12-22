@@ -59,7 +59,46 @@ CK
 HK
 ```
 
+## Test Results
 
+To test this script, there is a test file named: `itertool_input.txt` in the same directory. <br>
+Run the this script with the following command: <br>
+
+`python3 IterTools_Combinations.py < itertool_input.txt` <br>
+
+![Hello Hack World](assessment_screenshots/Hello_Hack_World.png) <br>
+
+Okay, I think I get it. <br>
+
+... Thoughts...
+
+The `itertool` could take any string `(S or s)` `"NEW YORK 2"` or `"new york 1"` and print all the combinations up to the `size` `2` or `1` designated in the for loop: <br>
+
+```
+for i in range(1, k + 1): # Generate combinations of size 1 to k 
+        for comb in combinations(S, i): 
+            results.append(''.join(comb))... 
+```
+## Flexibility
+
+`Itertools` allows it to handle any input size string, uppercase, lowercase, or even containing spaces... <br>
+By iterating over the combinations of sizes `1` to `k`, the code geneates all possible `lexicographic` combinations up to the desired `size`... <br>
+
+## Conculsion
+
+After completing this Hacker Rank challenge, I understood what it did, But I wasn't understanding how it could be used. <br>
+
+I asked my AI friend and it provided me with a interesting list of uses cases. <br>
+Here are a few: <br> 
+
+- Data Science and Analytics
+- Cryptography
+- Biology and Chemistry
+- Game Design and Theory
+- Text and Language Applications
+- Machine Learning and AI
+
+I though-up a few applications utilizing `itertools`, I think would be exciting project to actully create... <br> 
 
 
 
