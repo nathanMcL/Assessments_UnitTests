@@ -72,7 +72,8 @@ Okay, I think I get it. <br>
 
 ... Thoughts...
 
-The `itertool` could take any string `(S or s)` `"NEW YORK 2"` or `"new york 1"` and print all the combinations up to the `size` `2` or `1` designated in the for loop: <br>
+The `itertool` could take any string `(S or s)` `"NEW YORK 2"` or `"new york 1"` and print all the combinations up to the `size` `2` or `1` designated in the test file `inertool_input.txt`. <br>
+Within this for loop the `2` or `1` is indicated by the size of `k`:
 
 ```
 for i in range(1, k + 1): # Generate combinations of size 1 to k 
