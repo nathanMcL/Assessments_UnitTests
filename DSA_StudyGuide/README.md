@@ -137,8 +137,8 @@ Permanently save the changes or restore the file to its original state after pro
 
 ```
 Operation:	Time Complexity:  Explain:  
-Access	      O(1)            It is `Constant time`, as the `array` is indexed.
-Search	      O(n)            It is `Linear time`, because every `[element]` must be checked.
+Access	        O(1)            It is `Constant time`, as the `array` is indexed.
+Search	        O(n)            It is `Linear time`, because every `[element]` must be checked.
 Insertion	  O(n)            This requires shifting elements, making the complexity `O(n)`.
 Deletion	  O(n)            Also requires shifting elements, making the complexity `O(n)`.
 ```
