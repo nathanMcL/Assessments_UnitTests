@@ -1,5 +1,6 @@
 # PokemonArray_ListManipulation.py
-import re 
+import re
+import os 
 
 # Read array data from the test files
 def read_array_file(file_path, pattern_to_exclude):
@@ -14,7 +15,8 @@ def read_array_file(file_path, pattern_to_exclude):
 
 def main():
     # Test file input paths
-    pokemon_filepath = r"DSA_Test_files/array_Pokemon_input.txt"
+    base_dir = os.path.dirname(os.path.abspath(__file__)) # Get the directory of the script
+    pokemon_filepath = os.path.join(base_dir, "../DSA_Test_files/array_Pokemon_input.txt")
 
     # Regex pattern to exclude lines that are not character names
     pokemon_exclusion_pattern = r"^Generation|^Pokemon"
