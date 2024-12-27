@@ -1,0 +1,60 @@
+Pokemon OGs:
+Pikachu
+Charmander
+Bulbasaur
+Squirtle
+Eevee
+Generation 1 (Kanto):
+Butterfree
+Pidgeot
+Gengar
+Mewtwo
+Snorlax
+Generation 2 (Johto):
+Cyndaquil
+Togepi
+Ampharos
+Lugia
+Celebi
+Generation 3 (Hoenn):
+Treecko
+Gardevoir
+Rayquaza
+Deoxys
+Metagross
+Generation 4 (Sinnoh):
+Turtwig
+Lucario
+Dialga
+Palkia
+Giratina
+Generation 5 (Unova):
+Snivy
+Zoroark
+Reshiram
+Zekrom
+Keldeo
+Generation 6 (Kalos):
+Chespin
+Greninja
+Xerneas
+Yveltal
+Diancie
+Generation 7 (Alola):
+Rowlet
+Lycanroc
+Solgaleo
+Lunala
+Marshadow
+Generation 8 (Galar):
+Grookey
+Corviknight
+Zacian
+Zamazenta
+Zarude
+Generation 9 (Paldea):
+Sprigatito
+Pawmi
+Koraidon
+Miraidon
+
