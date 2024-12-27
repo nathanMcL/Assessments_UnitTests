@@ -64,6 +64,9 @@ pokemon_array.insert(0, "Charmander")
                 pokemon_array.insert(index, element)
                 print(f"Inserted '{element}' at index {index}.")
 ```
+`insert i e`<br>
+Command/Index Location/Element Name  <br>
+`insert 0 Bulbasaur`
 
 2. `remove` `Charmander`: Delete the first occurrence of `Charmander`. <br>
 
@@ -82,6 +85,9 @@ if "Charmander" in pokemon_array:
                 pokemon_array.remove(element)
                 print(f"Removed first occurrence of '{element}'.")
 ```
+`remove e`<br>
+Command/Character Name  <br>
+`remove Charmander` <br>
 
 3. `append e`: Insert `Charmander` at the Top of the Pokémon OGs list. <br>
 
@@ -100,6 +106,11 @@ pokemon_array.append("Charmander")
 
 ```
 
+`append e` <br>
+Command/Element Name <br>
+`append Butterfree` <br>
+
+
 4. `sort`: Sort the Pokémon OGs list alphabetically. <br>
 
 ```
@@ -114,6 +125,8 @@ pokemon_array.sort()
                 pokemon_array.sort()
                 print("Sorted the Pokémon array alphabetically.")
 ```
+Command: `sort` <br>
+
 
 5. `pop`: Pop the last element from the new sorted Pokémon OGs list and print the character name. <br>
 
@@ -131,6 +144,8 @@ popped_element = pokemon_array.pop()
                 print(f"Popped last element: {popped_element}.")
 ```
 
+Command: `pop` <br>
+
 6. `reverse`: Reverse the list order. <br>
 
 ```
@@ -146,6 +161,7 @@ pokemon_array.reverse()
                 pokemon_array.reverse()
                 print("Reversed the Pokémon array.")
 ```
+Command: `reverse` <br>
 
 7. `restore`/ "reset": Restore the original order of the Pokémon array <br>
 
@@ -176,6 +192,8 @@ pokemon_array = original_pokemon_array
                 print("Restored the Pokémon array to its original order.")
 ```
 
+Command: `reset` <br>
+
 Permanently save the changes or restore the file to its original state after program execution. We are `writing back` to the file. <br>
 
 - Lines: `128/132` <br>
@@ -192,8 +210,8 @@ Permanently save the changes or restore the file to its original state after pro
 
 ```
 Operation:	Time Complexity:  Explain:  
-Access	          O(1)            It is `Constant time`, as the `array` is indexed.
-Search	          O(n)            It is `Linear time`, because every `[element]` must be checked.
+Access	      O(1)            It is `Constant time`, as the `array` is indexed.
+Search	      O(n)            It is `Linear time`, because every `[element]` must be checked.
 Insertion	  O(n)            This requires shifting elements, making the complexity `O(n)`.
 Deletion	  O(n)            Also requires shifting elements, making the complexity `O(n)`.
 ```
