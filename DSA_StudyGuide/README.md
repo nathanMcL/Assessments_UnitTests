@@ -22,8 +22,8 @@ An `Array` is a linear data structure consisting of a collection of elements `[.
 `Arrays` store elements of the same data type in adjacent memory locations, enabling efficient random access. <br>
 
 
-
 ... Make me Understand...🙃<br>
+
 First we want to be able to `access` the test files. <br>
 
 ```
@@ -49,7 +49,9 @@ Do we want to: <br>
  No worries, `Pikachu` will be moved to index `1`, and all subsequent elements will shift. <br>
 
 - Do `Charmander` and `Pikachu` swap locations?<br>
-No, `Charmander` is inserted at index `0`, and the rest of the array is shifted.<br>
+No, `Charmander` is inserted at index `0`, and the rest of the array is shifted.
+
+- If `Charmander` were a new entry to the test file at `index` `0`, would `Pikachu` be shuffled lower on the list?<br>
 
 ```
 pokemon_array.insert(0, "Charmander")
@@ -66,21 +68,21 @@ if "Charmander" in pokemon_array:
         print("'Charmander' not found in the array.")
 ```
 
-3. `append e`: Insert `Charmander` at the Top of the Pokemon OGs list. <br>
+3. `append e`: Insert `Charmander` at the Top of the Pokémon OGs list. <br>
 
 ```
 pokemon_array.append("Charmander")
     print(f"After appending 'Charmander': {pokemon_array}\n")
 ```
 
-4. `sort`: Sort the Pokemon OGs list alphabetically. <br>
+4. `sort`: Sort the Pokémon OGs list alphabetically. <br>
 
 ```
 pokemon_array.sort()
     print(f"After sorting alphabetically: {pokemon_array}\n")
 ```
 
-5. `pop`: Pop the last element from the new sorted Pokemon OGs list and print the character name. <br>
+5. `pop`: Pop the last element from the new sorted Pokémon OGs list and print the character name. <br>
 
 ```
 popped_element = pokemon_array.pop()
@@ -88,7 +90,7 @@ popped_element = pokemon_array.pop()
     print(f"Array after popping the last element: {pokemon_array}\n")
 ```
 
-6. `reverse`: Return the list back to its orignal order. <br>
+6. `reverse`: Return the list back to its original order. <br>
 
 ```
 pokemon_array.reverse()
@@ -96,31 +98,49 @@ pokemon_array.reverse()
     print(f"\n")
 ```
 
-7. `restore`: Restore the original order of the Pokemon array <br>
+7. `restore`: Restore the original order of the Pokémon array <br>
+
+This is not a necessary step. I added it because, what if a mistake was made along the way and it would be best to start over. <br>
+How could I do that.?. <br>
+Basically we are dynamically saving the current state of the `Pokémon array` in temporary memory when it creates the copy. <br>
+I wouldn't consider this a `Data Structure` "Topic". I wanted to know what would have to happen...<br>
+
+- Lines: `36/37` <br>
 
 ```
-# Save the original order of the Pokemon array test file.
+# Save the original order of the Pokémon array test file.
     original_pokemon_array = pokemon_array.copy()
 ```
-<br>
 
-7. Restore the original order of the Pokemon array <br>
+- Lines: `125/126`<br>
 
 ```
+# 7. Restore the original order of the Pokémon array
 pokemon_array = original_pokemon_array
     print(f"Restored to original order: {pokemon_array}\n")
 ```
-<br>
+
+Permanently save the changes or restore the file to its original state after program execution. We are `writing back` to the file. <br>
+
+- Lines: `128/132` <br>
+
+```
+# Optional: Write the original array back to the file after all manipulations are done.
+    # This can be commented out. Purely Optional.
+    with open(pokemon_filepath, 'w') as file:
+        file.write('\n'.join(original_pokemon_array))
+    print(f"Original order saved back to the file: {pokemon_filepath}")
+```
 
 
 ### Big`O` Runtime
 
 ```
 Operation:	Time Complexity:  Explain:  
-Access	            O(1)            It is `Constant time`, as the `array` is indexed.
-Search	            O(n)            It is `Linear time`, because every `[element]` must be checked.
-Insertion	    O(n)            This requires shifting elements, making the complexity `O(n)`.
-Deletion	    O(n)            Also requires shifting elements, making the complexity `O(n)`.
+Access	      O(1)            It is `Constant time`, as the `array` is indexed.
+Search	      O(n)            It is `Linear time`, because every `[element]` must be checked.
+Insertion	  O(n)            This requires shifting elements, making the complexity `O(n)`.
+Deletion	  O(n)            Also requires shifting elements, making the complexity `O(n)`.
 ```
 <br>
 
@@ -131,3 +151,93 @@ Deletion	    O(n)            Also requires shifting elements, making the complex
 - Visual Representations: `Arrays` are useful for static lists that are displayed in user interfaces. <br>
 
 
+## Linked List
+
+- Big`O` Runtime: <br>
+
+- Use Cases:   <br>
+
+## Tree (Tree, Binary Tree, Binary Search Tree, Red-Black Tree, etc.)
+
+`Tree`:   <br>
+
+- Big`O` Runtime:  <br> 
+
+- Use Cases:   <br>
+
+`Binary Tree`:   <br>
+
+- Big`O` Runtime:  <br> 
+
+- Use Cases:   <br>
+
+`Binary Search Tree`:   <br>
+
+- Big`O` Runtime:  <br> 
+
+- Use Cases:   <br>
+
+`Red-Black Tree`:   <br>
+
+- Big`O` Runtime:  <br> 
+
+- Use Cases:   <br>
+
+## Heap
+
+- Big`O` Runtime:    <br>
+
+- Use Cases:   <br>
+
+## Hash Table
+
+- Big`O` Runtime:     <br>
+
+- Use Cases:   <br>
+
+## Stack
+
+- Big`O` Runtime:     <br>
+
+- Use Cases:   <br>
+
+## Queue
+
+- Big`O` Runtime:    <br>
+
+- Use Cases:   <br>
+
+## Tree
+
+- Big`O` Runtime:    <br>
+
+- Use Cases:   <br>
+
+## Graph (both directed and undirected)
+
+- Big`O` Runtime:   <br>
+
+- Use Cases:   <br>
+
+## Algorithms
+
+
+## Sorting: 
+
+- `Bubble Sort`
+
+
+- `Merge Sort`
+
+
+- `Quick Sort`
+
+
+- `Radix / Bucket Sort`
+
+
+
+## Traversals with multiple data structures
+
+- `Depth First Search`
+- `Breadth First Search`
