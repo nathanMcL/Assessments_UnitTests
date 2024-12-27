@@ -51,8 +51,6 @@ Do we want to: <br>
 - Do `Charmander` and `Pikachu` swap locations?<br>
 No, `Charmander` is inserted at index `0`, and the rest of the array is shifted.
 
-- If `Charmander` were a new entry to the test file at `index` `0`, would `Pikachu` be shuffled lower on the list?<br>
-
 ```
 pokemon_array.insert(0, "Charmander")
     print(f"After inserting 'Charmander' at index 0: {pokemon_array}\n")
