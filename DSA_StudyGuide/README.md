@@ -210,8 +210,8 @@ Permanently save the changes or restore the file to its original state after pro
 
 ```
 Operation:	Time Complexity:  Explain:  
-Access	        O(1)            Direct access to an array element by index is constant time because the way arrays are implemented.
-Search	        O(n)            Searching requires scanning the entire array (in the worst case) to locate the desired element.
+Access	          O(1)            Direct access to an array element by index is constant time because the way arrays are implemented.
+Search	          O(n)            Searching requires scanning the entire array (in the worst case) to locate the desired element.
 Insertion	  O(n)            Inserting at an arbitrary index shifts all subsequent elements, leading to linear time complexity.
 Deletion	  O(n)            Deleting an element also shifts elements, making it a linear operation.
 Append	      O(1)*	          Adding to the end is constant time if the array has enough capacity; otherwise, resizing occurs.
