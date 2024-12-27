@@ -25,6 +25,8 @@ An `Array` is a linear data structure consisting of a collection of elements `[.
 
 ... Make me Understand...🙃<br>
 
+First we want to be able to `access` the test files. <br>
+
 ```
 code and what have you goes here...😀
 ```
