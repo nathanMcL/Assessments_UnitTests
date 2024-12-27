@@ -14,7 +14,7 @@ Using these test files: <br>
 Located in this sub-directory: <br>
 `myAssessment\DSA_StudyGuide\DSA_Text_files\array_testFile_input.txt` <br>
 Using the Python scripts: <br>
-`Array.py` <br>
+`PokemonArray_ListManipulation.py` <br>
 
 ## `Array.py`
 
@@ -57,6 +57,15 @@ No, `Charmander` is inserted at index `0`, and the rest of the array is shifted.
 pokemon_array.insert(0, "Charmander")
     print(f"After inserting 'Charmander' at index 0: {pokemon_array}\n")
 ```
+... Command Driven...<br>
+
+```
+            if operation == "insert":
+                index = int(command[1])
+                element = command[2]
+                pokemon_array.insert(index, element)
+                print(f"Inserted '{element}' at index {index}.")
+```
 
 2. `remove` `Charmander`: Delete the first occurrence of `Charmander`. <br>
 
@@ -67,6 +76,14 @@ if "Charmander" in pokemon_array:
     else:
         print("'Charmander' not found in the array.")
 ```
+... Command Driven...<br>
+
+```
+            elif operation == "remove":
+                element = command[1]
+                pokemon_array.remove(element)
+                print(f"Removed first occurrence of '{element}'.")
+```
 
 3. `append e`: Insert `Charmander` at the Top of the Pokémon OGs list. <br>
 
@@ -75,11 +92,29 @@ pokemon_array.append("Charmander")
     print(f"After appending 'Charmander': {pokemon_array}\n")
 ```
 
+... Command Driven...<br>
+
+```
+            elif operation == "append":
+                element = command[1]
+                pokemon_array.append(element)
+                print(f"Appended '{element}' to the array.")
+
+```
+
 4. `sort`: Sort the Pokémon OGs list alphabetically. <br>
 
 ```
 pokemon_array.sort()
     print(f"After sorting alphabetically: {pokemon_array}\n")
+```
+
+... Command Driven...<br>
+
+```
+            elif operation == "sort":
+                pokemon_array.sort()
+                print("Sorted the Pokémon array alphabetically.")
 ```
 
 5. `pop`: Pop the last element from the new sorted Pokémon OGs list and print the character name. <br>
@@ -90,6 +125,14 @@ popped_element = pokemon_array.pop()
     print(f"Array after popping the last element: {pokemon_array}\n")
 ```
 
+... Command Driven...<br>
+
+```
+            elif operation == "pop":
+                popped_element = pokemon_array.pop()
+                print(f"Popped last element: {popped_element}.")
+```
+
 6. `reverse`: Return the list back to its original order. <br>
 
 ```
@@ -98,7 +141,15 @@ pokemon_array.reverse()
     print(f"\n")
 ```
 
-7. `restore`: Restore the original order of the Pokémon array <br>
+... Command Driven...<br>
+
+```
+            elif operation == "reverse":
+                pokemon_array.reverse()
+                print("Reversed the Pokémon array.")
+```
+
+7. `restore`/ "reset": Restore the original order of the Pokémon array <br>
 
 This is not a necessary step. I added it because, what if a mistake was made along the way and it would be best to start over. <br>
 How could I do that.?. <br>
@@ -119,6 +170,13 @@ I wouldn't consider this a `Data Structure` "Topic". I wanted to know what would
 pokemon_array = original_pokemon_array
     print(f"Restored to original order: {pokemon_array}\n")
 ```
+... Command Driven...<br>
+
+```
+            elif operation == "reset":
+                pokemon_array = original_pokemon_array.copy()
+                print("Restored the Pokémon array to its original order.")
+```
 
 Permanently save the changes or restore the file to its original state after program execution. We are `writing back` to the file. <br>
 
@@ -132,7 +190,6 @@ Permanently save the changes or restore the file to its original state after pro
     print(f"Original order saved back to the file: {pokemon_filepath}")
 ```
 
-
 ### Big`O` Runtime
 
 ```
@@ -142,6 +199,7 @@ Search	          O(n)            It is `Linear time`, because every `[element]` 
 Insertion	  O(n)            This requires shifting elements, making the complexity `O(n)`.
 Deletion	  O(n)            Also requires shifting elements, making the complexity `O(n)`.
 ```
+
 <br>
 
 ### Use Cases:   <br>
@@ -149,5 +207,3 @@ Deletion	  O(n)            Also requires shifting elements, making the complexit
 - Efficient to Random Access: Ideal when the position of elements is known and frequently accessed. <br>
 - Storing Data (Uniformed, Consistent, Similar): For fixed-size datasets like game character stats, emoji collections, or leaderboard scores. <br>
 - Visual Representations: `Arrays` are useful for static lists that are displayed in user interfaces. <br>
-
-
