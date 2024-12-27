@@ -131,7 +131,7 @@ popped_element = pokemon_array.pop()
                 print(f"Popped last element: {popped_element}.")
 ```
 
-6. `reverse`: Return the list back to its original order. <br>
+6. `reverse`: Reverse the list order. <br>
 
 ```
 pokemon_array.reverse()
