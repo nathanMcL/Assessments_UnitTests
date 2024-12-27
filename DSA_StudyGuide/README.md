@@ -24,12 +24,93 @@ An `Array` is a linear data structure consisting of a collection of elements `[.
 
 
 ... Make me Understand...🙃<br>
-
 First we want to be able to `access` the test files. <br>
 
 ```
-code and what have you goes here...😀
+### Read the array data from the test files 
+def read_array_file(file_path, pattern_to_exclude):
+    try:
+        with open(file_path, 'r') as file:
+            lines = file.readlines()
+            # Use regex to exclude lines that are not character names (Section headers)
+            return [line.strip() for line in lines if not re.match(pattern_to_exclude, line.strip())]    
+    except FileNotFoundError:
+        print(f"Error: File at {file_path} not found.")
+        return []
 ```
+
+...Next... <br>
+We have to know what it is that we are wanting to do... <br>
+Do we want to: <br>
+
+1. `insert` `Charmander` into the first index position `0`of the `array_Pokemon_input` test file: Insert `Charmander` at position `0`. <br>
+
+- What then Happens to `Pikachu`? <br>
+ No worries, `Pikachu` will be moved to index `1`, and all subsequent elements will shift. <br>
+
+- Do `Charmander` and `Pikachu` swap locations?<br>
+No, `Charmander` is inserted at index `0`, and the rest of the array is shifted.<br>
+
+```
+pokemon_array.insert(0, "Charmander")
+    print(f"After inserting 'Charmander' at index 0: {pokemon_array}\n")
+```
+
+2. `remove` `Charmander`: Delete the first occurrence of `Charmander`. <br>
+
+```
+if "Charmander" in pokemon_array:
+        pokemon_array.remove("Charmander")
+        print(f"After removing 'Charmander': {pokemon_array}\n")
+    else:
+        print("'Charmander' not found in the array.")
+```
+
+3. `append e`: Insert `Charmander` at the Top of the Pokemon OGs list. <br>
+
+```
+pokemon_array.append("Charmander")
+    print(f"After appending 'Charmander': {pokemon_array}\n")
+```
+
+4. `sort`: Sort the Pokemon OGs list alphabetically. <br>
+
+```
+pokemon_array.sort()
+    print(f"After sorting alphabetically: {pokemon_array}\n")
+```
+
+5. `pop`: Pop the last element from the new sorted Pokemon OGs list and print the character name. <br>
+
+```
+popped_element = pokemon_array.pop()
+    print(f"Popped Element: {popped_element}")
+    print(f"Array after popping the last element: {pokemon_array}\n")
+```
+
+6. `reverse`: Return the list back to its orignal order. <br>
+
+```
+pokemon_array.reverse()
+    print(f"After reversing: {pokemon_array}\n")
+    print(f"\n")
+```
+
+7. `restore`: Restore the original order of the Pokemon array <br>
+
+```
+# Save the original order of the Pokemon array test file.
+    original_pokemon_array = pokemon_array.copy()
+```
+<br>
+
+7. Restore the original order of the Pokemon array <br>
+
+```
+pokemon_array = original_pokemon_array
+    print(f"Restored to original order: {pokemon_array}\n")
+```
+<br>
 
 
 ### Big`O` Runtime
