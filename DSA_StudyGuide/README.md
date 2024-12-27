@@ -137,8 +137,8 @@ Permanently save the changes or restore the file to its original state after pro
 
 ```
 Operation:	Time Complexity:  Explain:  
-Access	        O(1)            It is `Constant time`, as the `array` is indexed.
-Search	        O(n)            It is `Linear time`, because every `[element]` must be checked.
+Access	          O(1)            It is `Constant time`, as the `array` is indexed.
+Search	          O(n)            It is `Linear time`, because every `[element]` must be checked.
 Insertion	  O(n)            This requires shifting elements, making the complexity `O(n)`.
 Deletion	  O(n)            Also requires shifting elements, making the complexity `O(n)`.
 ```
@@ -151,93 +151,3 @@ Deletion	  O(n)            Also requires shifting elements, making the complexit
 - Visual Representations: `Arrays` are useful for static lists that are displayed in user interfaces. <br>
 
 
-## Linked List
-
-- Big`O` Runtime: <br>
-
-- Use Cases:   <br>
-
-## Tree (Tree, Binary Tree, Binary Search Tree, Red-Black Tree, etc.)
-
-`Tree`:   <br>
-
-- Big`O` Runtime:  <br> 
-
-- Use Cases:   <br>
-
-`Binary Tree`:   <br>
-
-- Big`O` Runtime:  <br> 
-
-- Use Cases:   <br>
-
-`Binary Search Tree`:   <br>
-
-- Big`O` Runtime:  <br> 
-
-- Use Cases:   <br>
-
-`Red-Black Tree`:   <br>
-
-- Big`O` Runtime:  <br> 
-
-- Use Cases:   <br>
-
-## Heap
-
-- Big`O` Runtime:    <br>
-
-- Use Cases:   <br>
-
-## Hash Table
-
-- Big`O` Runtime:     <br>
-
-- Use Cases:   <br>
-
-## Stack
-
-- Big`O` Runtime:     <br>
-
-- Use Cases:   <br>
-
-## Queue
-
-- Big`O` Runtime:    <br>
-
-- Use Cases:   <br>
-
-## Tree
-
-- Big`O` Runtime:    <br>
-
-- Use Cases:   <br>
-
-## Graph (both directed and undirected)
-
-- Big`O` Runtime:   <br>
-
-- Use Cases:   <br>
-
-## Algorithms
-
-
-## Sorting: 
-
-- `Bubble Sort`
-
-
-- `Merge Sort`
-
-
-- `Quick Sort`
-
-
-- `Radix / Bucket Sort`
-
-
-
-## Traversals with multiple data structures
-
-- `Depth First Search`
-- `Breadth First Search`
