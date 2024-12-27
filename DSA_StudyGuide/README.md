@@ -214,10 +214,10 @@ Access	          O(1)            Direct access to an array element by index is c
 Search	          O(n)            Searching requires scanning the entire array (in the worst case) to locate the desired element.
 Insertion	  O(n)            Inserting at an arbitrary index shifts all subsequent elements, leading to linear time complexity.
 Deletion	  O(n)            Deleting an element also shifts elements, making it a linear operation.
-Append	      O(1)*	          Adding to the end is constant time if the array has enough capacity; otherwise, resizing occurs.
-Sort	      O(n log n)	  Sorting uses comparison-based algorithms (like Timsort in Python) with a typical complexity of O(n log n).
+Append	          O(1)*	          Adding to the end is constant time if the array has enough capacity; otherwise, resizing occurs.
+Sort	          O(n log n)	  Sorting uses comparison-based algorithms (like Timsort in Python) with a typical complexity of O(n log n).
 Pop	          O(1) or O(n)	  Popping the last element is O(1), but removing from the middle requires shifting, making it O(n).
-Reverse	      O(n)	          Reversing involves swapping elements in place, which is linear in time complexity.
+Reverse	          O(n)	          Reversing involves swapping elements in place, which is linear in time complexity.
 ```
 
 <br>
