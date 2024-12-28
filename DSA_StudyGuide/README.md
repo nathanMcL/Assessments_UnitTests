@@ -10,12 +10,19 @@ So, I’ve decided to tackle this head-on! This study guide will include program
 My goal is to not just solve problems but also to understand why certain methods work better than others. <br>
 It’s time to ditch the uncertainty. Let’s do this! 🤓💪 <br>
 
+---
+
 ## Set Up
 
-Using test files: <br>
+Using test_text.txt type files: <br>
 `array_Pokemon_input.txt` <br>
 `array_Emoji_input.txt` <br>
+
 Located in this sub-directory: <br>
 `myAssessment\DSA_StudyGuide\DSA_Text_files\array_testFile_input.txt` <br>
-Using the Python scripts: <br>
+
+Using Python coded scripts: <br>
 `PokemonArray_ListManipulation.py` <br>
+`Linked_Lists.py` <br>
+
+---
