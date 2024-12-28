@@ -12,7 +12,7 @@ It’s time to ditch the uncertainty. Let’s do this! 🤓💪 <br>
 
 ## Set Up
 
-Using these test files: <br>
+Using test files: <br>
 `array_Pokemon_input.txt` <br>
 `array_Emoji_input.txt` <br>
 Located in this sub-directory: <br>
