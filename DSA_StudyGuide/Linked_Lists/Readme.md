@@ -2,7 +2,6 @@
 
 (*TODO* Link the wiki links to the individual `highlighted` terminology: `Linked List`, `node`, `linear data structure`...etc) <br>
 Wiki Link: https://en.wikipedia.org/wiki/Node_(computer_science)<br>
-Link the project files to the readme `Set up` section.<br>
 
 ---
 
@@ -23,17 +22,31 @@ Using the Python script: <br>
 ## Linked Lists
 
 So, what is a linked list... well, a linked list could be as simple as two text1.txt and text2.txt files created from your note pad on your device...<br>
+The `Linked_Lists.py` script is a command-driven Python program designed to demonstrate how linked lists using fun and practical examples:<br>
 
+- Merging: `merge` emoji descriptions with their corresponding emoji icons. <br>
+- Reversing: `reverse` the order of the linked lists.
+- Comparing: `compare` the linked lists node structure data.
+
+---
+
+### What is Happening in the Code?
+
+- 1. **Understanding the Linked List Structure**:
 - A `Linked List` in programming is a `linear` `data structure` where data is stored in individual `nodes`. <br>
+- Each **emoji** (icon 😬) and its **description** (Awkward) are treated as `nodes`.<br>
 
 1. What is a `node`? <br>
 
 A node is a basic unit of a data structure, such as a `linked list` or `tree` data structure. <br>
 `Nodes` contain data <br>
+
+2. **Data**: The `emoji icon` or `emoji description`<br>
+
 ```
 [
-Weather
-☀️
+Weather  Description
+☀️       Sunny  
 ☁️
 🌈
 ☂️
@@ -50,6 +63,9 @@ A `pointer` is a special variable within each `node` that stores the memory addr
 
 Each `node` contains two parts: the data and the reference or `pointer` to the next node in the sequence. <br>
 
+- The `data` like an 👽 or its description `Alien`.<br>
+👾 - `Game alien`, 🤖 - `Robot`, 👻 - `Ghost`...<br>
+
 ### Advatages of Linked Lists:
 
 1. **Dynamic Size**: Can grow or shrink in size without the need for resizing arrays.<br>
@@ -63,12 +79,30 @@ Each `node` contains two parts: the data and the reference or `pointer` to the n
 
 Building upon our `Array` accessing framework, we will now attempt to manipulate the Test file lists. Not the list itself...<br>  
 
+---
 
 ## Key Operations
 
-### Merge Two Sorted Linked Lists
+### Creating Linked Lists
+
+- The `create_linked_list` function dynamically builds linked lists by adding `nodes` for each emoji 😺 or description `Cat face`. <br>
+
+### Merge Sorted Linked Lists
 
 - **Description**: Combine two sorted linked lists into a single sorted linked list with the `Emoji Description` spaced beside the `Emoji` Icon.<br>
+- 1. The `merge_with` method combines two linked lists into a single list where each emoji icon is paired with its corresponding decription:
+
+```
+🐶 - Dog face
+🦊 - Fox face
+🐻 - Bear face
+🐼 - Panda face
+```
+
+### Displaying the `Merged` Lists
+
+- The `display` method traverses the merged list and prints each node sequentially.  
+
 - **Runtime Complexity**: `O(n + m)` where `n` and `m` are the lengths of the two lists.
 - **Use Case**: Useful in scenarios like merging data streams or when sorting datasets using divide-and-conquer techniques. <br>
 
