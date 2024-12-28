@@ -27,3 +27,6 @@ Using Python coded scripts: <br>
 (Located in their desginated folder) <br>
 
 ---
+
+1. **Arrays**: `List Manipulation` <br>
+2. **Linked Lists**:  `Merging`, `Reverseing`, & `Comparing` <br>
