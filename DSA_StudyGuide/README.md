@@ -19,10 +19,11 @@ Using test_text.txt type files: <br>
 `array_Emoji_input.txt` <br>
 
 Located in this sub-directory: <br>
-`myAssessment\DSA_StudyGuide\DSA_Text_files\array_testFile_input.txt` <br>
+`DSA_StudyGuide\DSA_Text_files\array_testFile_input.txt` <br>
 
 Using Python coded scripts: <br>
 `PokemonArray_ListManipulation.py` <br>
 `Linked_Lists.py` <br>
+(Located in their desginated folder) <br>
 
 ---
