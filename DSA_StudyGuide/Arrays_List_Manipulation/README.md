@@ -11,6 +11,8 @@ An `Array` is a linear data structure consisting of a collection of elements `[.
 First we want to be able to `access` the test files. <br>
 
 ```
+# import required
+import re
 ### Read the array data from the test files 
 def read_array_file(file_path, pattern_to_exclude):
     try:
