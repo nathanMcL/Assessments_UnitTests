@@ -87,6 +87,15 @@ Building upon our `Array` accessing framework, we will now attempt to manipulate
 
 - The `create_linked_list` function dynamically builds linked lists by adding `nodes` for each emoji 😺 or description `Cat face`. <br>
 
+```
+# Create a linked list from the test data.
+def create_linked_list(data):
+    ll = LinkedList()
+    for item in data:
+        ll.append(item)
+    return ll
+```
+
 ### Merge Sorted Linked Lists
 
 - **Description**: Combine two sorted linked lists into a single sorted linked list with the `Emoji Description` spaced beside the `Emoji` Icon.<br>
@@ -98,10 +107,36 @@ Building upon our `Array` accessing framework, we will now attempt to manipulate
 🐻 - Bear face
 🐼 - Panda face
 ```
+...code...<br>
+
+```
+# Merge the two lists: `array_Emoji_input.txt` and `Emoji_description.txt`
+    def merge_with(self, other):
+        merged = LinkedList()
+        p1 = self.head
+        p2 = other.head
+
+        while p1 and p2:
+            merged.append(f"{p1.data} - {p2.data}")
+            p1 = p1.next
+            p2 = p2.next
+```
+
 
 ### Displaying the `Merged` Lists
 
-- The `display` method traverses the merged list and prints each node sequentially.  
+- The `display` method traverses the merged list and prints each node sequentially.
+
+...code...<br>
+  
+```
+# Display the list
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data)
+            current = current.next
+ ```
 
 - **Runtime Complexity**: `O(n + m)` where `n` and `m` are the lengths of the two lists.
 - **Use Case**: Useful in scenarios like merging data streams or when sorting datasets using divide-and-conquer techniques. <br>
