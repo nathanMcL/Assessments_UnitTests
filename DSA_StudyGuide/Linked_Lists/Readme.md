@@ -22,7 +22,7 @@ Using the Python script: <br>
 ## Linked Lists
 
 So, what is a linked list... well, a linked list could be as simple as two text1.txt and text2.txt files created from your note pad on your device...<br>
-The `Linked_Lists.py` script is a command-driven Python program designed to demonstrate how linked lists using fun and practical examples:<br>
+The `Linked_Lists.py` script is a command-driven Python program designed to demonstrate how linked lists can be used, using fun and practical examples:<br>
 
 - Merging: `merge` emoji descriptions with their corresponding emoji icons. <br>
 - Reversing: `reverse` the order of the linked lists.
