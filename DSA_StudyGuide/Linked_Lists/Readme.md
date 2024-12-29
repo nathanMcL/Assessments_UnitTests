@@ -21,62 +21,53 @@ Using the Python script: <br>
 
 ## Linked Lists
 
-So, what is a linked list... well, a linked list could be as simple as two text1.txt and text2.txt files created from your note pad on your device...<br>
-The `Linked_Lists.py` script is a command-driven Python program designed to demonstrate how linked lists using fun and practical examples:<br>
+So, what is a linked list... well, a linked list could be as simple as two files (`text1.txt` and `text2.txt`) created from your note pad on your device...<br>
+The `Linked_Lists.py` script is a command-driven Python program designed to demonstrate how linked lists can work while using fun and practical examples:<br>
 
-- Merging: `merge` emoji descriptions with their corresponding emoji icons. <br>
-- Reversing: `reverse` the order of the linked lists.
-- Comparing: `compare` the linked lists node structure data.
+- **Merging**: `merge` emoji descriptions with their corresponding emoji icons.  
+- **Reversing**: `reverse` the order of the linked lists.  
+- **Comparing**: `compare` the linked lists' node structure and data.
 
 ---
 
 ### What is Happening in the Code?
 
-- 1. **Understanding the Linked List Structure**:
-- A `Linked List` in programming is a `linear` `data structure` where data is stored in individual `nodes`. <br>
-- Each **emoji** (icon 😬) and its **description** (Awkward) are treated as `nodes`.<br>
+#### 1. **Understanding the Linked List Structure**:
 
-1. What is a `node`? <br>
+A `Linked List` in programming is a `linear` `data structure` where data is stored in individual `nodes`. <br>
+Each **emoji** (icon 😬) and its **description** (Awkward) are treated as `nodes`.<br>
 
-A node is a basic unit of a data structure, such as a `linked list` or `tree` data structure. <br>
-`Nodes` contain data <br>
+#### 2. **What is a `node`?** <br>
 
-2. **Data**: The `emoji icon` or `emoji description`<br>
+A node is a basic unit of a data structure, such as a `linked list` or `tree`. Nodes contain **data** (like an emoji icon or description). <br>
 
-```
-[
-Weather  Description
-☀️       Sunny  
-☁️
-🌈
-☂️
-]
-```
-and may also link to other nodes...<br>
-...ok...but...How.?. <br>
+#### 3. **How are Nodes Linked?**
 
-- `Link Lists` are linked togeather using `pointers`. <br>
+Nodes in linked lists are connected using **pointers**: <br>
 
-1. What is a `pointer`?<br>
+- A `pointer` is a special variable within each `node` that stores the memory address of the next node in the sequence.<br>
 
-A `pointer` is a special variable within each `node` that stores the memory address of the next node in the sequence.<br>
+Each `node` contains two parts: <br>
 
-Each `node` contains two parts: the data and the reference or `pointer` to the next node in the sequence. <br>
-
-- The `data` like an 👽 or its description `Alien`.<br>
-👾 - `Game alien`, 🤖 - `Robot`, 👻 - `Ghost`...<br>
-
-...code...<br>
+1. **Data**: The emoji (👽) or its description (`Alien`). <br>
+2. **Pointer**: A reference to the next node.
 
 ```
-# Each emoji description and Icon are stored as an individual Node.
+Node 1 [☀️] -> Node 2 [☁️] -> Node 3 [🌈] -> Node 4 [☂️] -> None
+```
+
+**Code Example** <br>
+
+```
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
 ```
 
-### Advatages of Linked Lists:
+---
+
+### Advatages of Linked Lists
 
 1. **Dynamic Size**: Can grow or shrink in size without the need for resizing arrays.<br>
 2. **Efficient Insertions/Deletions**: Insertions and deletions can be performed efficiently in constant time, `0(1)`, if the pointer to the location is know. <br>
@@ -87,7 +78,7 @@ class Node:
 2. **Overhead**: Requires extra memory for pointers. <br>
 
 
-Building upon our `Array` accessing framework, we will now attempt to manipulate the Test file lists. Not the list itself...<br>  
+Building upon our `Array` framework, we will now attempt to `access`, `merge`, `reverse`, `compare`, and `save` a linked list.<br>  
 
 ---
 
@@ -95,17 +86,22 @@ Building upon our `Array` accessing framework, we will now attempt to manipulate
 
 ### Creating Linked Lists
 
-- The `create_linked_list` function dynamically builds linked lists by adding `nodes` for each emoji 😺 or description `Cat face`. <br>
+The `create_linked_list` function dynamically builds linked lists by adding `nodes` for each emoji 😺 or description `Cat face`. <br>
 
 ### Merge Sorted Linked Lists
 
-- **Description**: Combine two sorted linked lists into a single sorted linked list with the `Emoji Description` spaced beside the `Emoji` Icon.<br>
+#### **Description**:
+
+ Combine two sorted linked lists into a single sorted linked list with the `Emoji Description` spaced beside the `Emoji` Icon.<br>
+
 - 1. The `merge_with` method combines two linked lists into a single list where each emoji icon is paired with its corresponding emoji decription. <br>
 
 - What if one list has more elements than the other? <br>
 If the list do not have the same amount of elements, or if list # 1 has 10 elements and list # 2  has 8 element, the extra `nodes` are appended (added to the end of) to the merged list.<br>
 
+#### Before Merging:<br>
 
+Linked List # 1:<br>
 ```
 [
     🐶
@@ -115,6 +111,7 @@ If the list do not have the same amount of elements, or if list # 1 has 10 eleme
 ]
 ```
 `merge_with` <br>
+Linked List # 2:<br>
 ```
 [
     Dog face
@@ -126,7 +123,7 @@ If the list do not have the same amount of elements, or if list # 1 has 10 eleme
 
 ### Merge the two lists: `array_Emoji_input.txt` and `Emoji_description.txt`<br>
 
-**Whats the code?** <br>
+**What's the code?** <br>
 
 - There are two `pointers`, `p1` and `p2`, start at the heads (or top of the two lists) of the two `linked lists`. <br>
 - While both `pointers` have `nodes`:
@@ -137,16 +134,19 @@ If the list do not have the same amount of elements, or if list # 1 has 10 eleme
 
 - Once one list is exhausted, any remaining `nodes` from the other list are `appended` to the merged list. <br>
 
+#### Code:
+
 ```
     def merge_with(self, other):
-        merged = LinkedList()
-        p1 = self.head
-        p2 = other.head
+        merged = LinkedList() # Create a new merged linked list
+        p1 = self.head        # Pointer for the first list.
+        p2 = other.head       # Pointer for the second list.
 
+        # Traverse both lists simultaneously.
         while p1 and p2:
-            merged.append(f"{p1.data} - {p2.data}")
-            p1 = p1.next
-            p2 = p2.next
+            merged.append(f"{p1.data} - {p2.data}") # Combine and append data.
+            p1 = p1.next                            # Move the pointer to the next node in list #1.
+            p2 = p2.next                            # Move the pointer to the next node in list #2.
 
         # Append the remaining nodes from either list
         while p1:
@@ -161,6 +161,7 @@ If the list do not have the same amount of elements, or if list # 1 has 10 eleme
 
 ### Merge the two lists: Operation Command `merge`
 
+**What's the code?**
 ```
         if operation == "merge":
             self.merged_ll = self.emoji_ll.merge_with(self.description_ll)
@@ -172,7 +173,7 @@ If the list do not have the same amount of elements, or if list # 1 has 10 eleme
 
 - The `display` method traverses the merged linked list, `node` by `node` and prints the data in each node sequentially.<br>  
 
-**Whats the code?** <br>
+**What's the code?** <br>
 
 - A `pointer`, **current**, starts at the head of the linked list.<br>
 - While `current` is not `None` (meaning there are still `nodes` to process): 
@@ -188,6 +189,12 @@ If the list do not have the same amount of elements, or if list # 1 has 10 eleme
             current = current.next
 ```
 
+#### After Merging:
+
+```
+[🐶 - Dog face -> 🦊 - Fox face -> 🐻 - Bear face -> 🐼 - Panda face]
+```
+
 #### Why use this?
 
 - To visually confirm the structure and contents of the linked list. <br>
@@ -198,14 +205,15 @@ If the list do not have the same amount of elements, or if list # 1 has 10 eleme
 
 ### Reverse a Linked List
 
-- **Description**: <br>
+#### **Description**: <br>
+
 The `reverse` method changes the order of the nodes `(Emojis)` in the linked lists. (A...Z to Z...A)
 
 ### Reverse the combined Linked Lists
 
-**Whats the code?** <br>
+**What's the code?** <br>
 
-- Three `pointers`, `prev`, `current`, and `next_node`, are used: <br>
+- Using `pointers`, `prev`, `current`, and `next_node` are used: <br>
 
 1. Start with `prev` as `None` and `current` pointing to the `head` of the list.<br> 
 
@@ -217,6 +225,7 @@ The `reverse` method changes the order of the nodes `(Emojis)` in the linked lis
 
 3. When the traversal is complete, `prev` will point to the new head of the reversed list. <br>
 
+#### Code:
 
 ```
     def reverse(self):
@@ -232,6 +241,8 @@ The `reverse` method changes the order of the nodes `(Emojis)` in the linked lis
 
 ### Reverse the merged lists order: Operation Command `reverse`
 
+#### Code:
+
 ```
         elif operation == "reverse":
             if self.merged_ll:
@@ -242,13 +253,80 @@ The `reverse` method changes the order of the nodes `(Emojis)` in the linked lis
                 print("No merged list to reverse. Use the 'merge' command first.")
 ```
 
-- **Runtime Complexity**: `O(n)`.
+#### Reverse Example: <br>
+
+```
+Before Reversing: [A -> B -> C -> D -> None]
+After Reversing:  [D -> C -> B -> A -> None]
+```
+
+- **Runtime Complexity**: `O(n)`. <br>
 - **Use Case**: Frequently used in algorithms like palindrome detection in linked lists or reversing sequences for processing. <br>
+
+---
 
 ### Compare Two Linked Lists
 
-- **Description**: Check if two linked lists are identical in terms of node data and structure. There should be one Description for each individual Emoji Icon.<br>
-- **Runtime Complexity**: `O(n)` where `n` is the smaller of the two list sizes.
+#### **Description**: <br>
+
+Check if two linked lists are identical in terms of node data and structure. There should be one Description for each individual Emoji Icon.<br>
+
+**What's the code?** <br>
+
+1. In this section we want to `compare` that the `emoji` linked list has a `description` for each emoji icon.<br>
+2. `While` `comparing` the data, the node data individually might not be the same, so we should also strip the leading and trailing whitespaces.<br>
+3. If the lists are not the same length, that could mean one has extra nodes.<br>
+
+#### Code:
+
+```
+    def compare_with(self, other):
+        p1 = self.head
+        p2 = other.head
+
+        while p1 and p2:
+            if p1.data.strip() != p2.data.strip():
+                return False
+            p1 = p1.next
+            p2 = p2.next
+
+        return p1 is None and p2 is None
+```
+...Next in `comparing`...<br>
+
+*`Validate`* that the Merged Linked List is aligned with the Combined Linked List elements.<br>
+
+1. In the `validate_merged_ll` method we traverse the `merged_ll` list (*`current`* `pointer`) and we are compare each node's `data` with the corresponding item in the `combined_list`.<br>
+2. If any mismatch is found or if the lengths differ, it returns `False`.<br>
+3. If all items match, it confirms the merged list is valid by returning `True`.<br> 
+
+#### Code:
+
+```
+    def validate_merged_ll(self, combined_list):
+        current = self.head
+        for item in combined_list:
+            if not current or current.data.strip() != item.strip():
+                return False
+            current = current.next
+        return current is None
+```
+
+...*Side Note*...<br>
+Comparing a pair of linked lists is a takes a different approach...<br>
+We arn't just comparing that there is a description for each emoji. We are comparing the actual data within the tests files to compare that the data is the same in each test file. <br>
+Since the Test files data are different you would receive an error message.<br>
+We would need to compare the merged list against the expected combined list.<br>
+
+#### Solution
+
+The goal is to `compare` the merged list with the combined original emoji and description lists to ensure they correct:
+
+1. Combine the `emoji_array` and `description_array` into a single list for comparison.<br>
+2. Create a new method to `validate` the `merged_ll` against the combined list.<br>
+
+
+- **Runtime Complexity**: `O(n)` where `n` is the smaller of the two list sizes.<br>
 - **Use Case**: Useful for data validation or ensuring data consistency across two linked structures. <br>
 
 ---
@@ -256,10 +334,12 @@ The `reverse` method changes the order of the nodes `(Emojis)` in the linked lis
 ### Big`O` Runtime for Linked Lists: <br>
 
 ```
-Access: 0(n) - Traversal is required to access elements.
-Search: 0(n) - Each element must be checked sequentially.
-Insertion: 0(1) - Constant time if the insertion point is known.
-Deletion: 0(1) - Constant time if the deletion point is known.
+| Operation   | Time Complexity | Explaination                                  |
+|-------------|-----------------|-----------------------------------------------|
+| Access      | `O(n)`          | Traversal is required to access elements.     |
+| Search      | `O(n)`          | Each element must be checked sequentially.    |
+| Insertion   | `O(1)`          | Constant time if the insertion point is known.|
+| Deletion    | `O(1)`          | Constant time if the deletion point is known. |
 ```
 
 ### Use Cases:   <br>
