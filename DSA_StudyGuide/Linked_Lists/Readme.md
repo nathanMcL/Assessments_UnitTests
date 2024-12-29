@@ -66,10 +66,8 @@ Each `node` contains two parts: the data and the reference or `pointer` to the n
 - The `data` like an 👽 or its description `Alien`.<br>
 👾 - `Game alien`, 🤖 - `Robot`, 👻 - `Ghost`...<br>
 
-...code...<br>
-
-```
 # Each emoji description and Icon are stored as an individual Node.
+```
 class Node:
     def __init__(self, data):
         self.data = data
@@ -87,7 +85,7 @@ class Node:
 2. **Overhead**: Requires extra memory for pointers. <br>
 
 
-Building upon our `Array` accessing framework, we will now attempt to manipulate the Test file lists. Not the list itself...<br>  
+Building upon the `Command-Driven` framework used in `PokemonArray_ListManipulation.py` accessing framework, we will now attempt to manipulate the Test file lists. Not the list itself...<br>  
 
 ---
 
