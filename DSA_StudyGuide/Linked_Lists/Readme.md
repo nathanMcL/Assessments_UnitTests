@@ -22,7 +22,7 @@ Using the Python script: <br>
 ## Linked Lists
 
 So, what is a linked list... well, a linked list could be as simple as two text1.txt and text2.txt files created from your note pad on your device...<br>
-The `Linked_Lists.py` script is a command-driven Python program designed to demonstrate how linked lists can be used, using fun and practical examples:<br>
+The `Linked_Lists.py` script is a command-driven Python program designed to demonstrate how linked lists using fun and practical examples:<br>
 
 - Merging: `merge` emoji descriptions with their corresponding emoji icons. <br>
 - Reversing: `reverse` the order of the linked lists.
@@ -34,7 +34,7 @@ The `Linked_Lists.py` script is a command-driven Python program designed to demo
 
 - 1. **Understanding the Linked List Structure**:
 - A `Linked List` in programming is a `linear` `data structure` where data is stored in individual `nodes`. <br>
-Each **emoji** (icon 😬) and its **description** (Awkward) are treated as `nodes`.<br>
+- Each **emoji** (icon 😬) and its **description** (Awkward) are treated as `nodes`.<br>
 
 1. What is a `node`? <br>
 
@@ -66,8 +66,10 @@ Each `node` contains two parts: the data and the reference or `pointer` to the n
 - The `data` like an 👽 or its description `Alien`.<br>
 👾 - `Game alien`, 🤖 - `Robot`, 👻 - `Ghost`...<br>
 
-### Each emoji description and Icon are stored as an individual Node.
+...code...<br>
+
 ```
+# Each emoji description and Icon are stored as an individual Node.
 class Node:
     def __init__(self, data):
         self.data = data
@@ -85,7 +87,7 @@ class Node:
 2. **Overhead**: Requires extra memory for pointers. <br>
 
 
-Building upon the `Command-Driven` framework used in `PokemonArray_ListManipulation.py` accessing framework, we will now attempt to manipulate the Test file lists. Not the list itself...<br>  
+Building upon our `Array` accessing framework, we will now attempt to manipulate the Test file lists. Not the list itself...<br>  
 
 ---
 
@@ -98,15 +100,42 @@ Building upon the `Command-Driven` framework used in `PokemonArray_ListManipulat
 ### Merge Sorted Linked Lists
 
 - **Description**: Combine two sorted linked lists into a single sorted linked list with the `Emoji Description` spaced beside the `Emoji` Icon.<br>
-- 1. The `merge_with` method combines two linked lists into a single list where each emoji icon is paired with its corresponding decription:
+- 1. The `merge_with` method combines two linked lists into a single list where each emoji icon is paired with its corresponding emoji decription. <br>
+
+- What if one list has more elements than the other? <br>
+If the list do not have the same amount of elements, or if list # 1 has 10 elements and list # 2  has 8 element, the extra `nodes` are appended (added to the end of) to the merged list.<br>
+
 
 ```
-🐶 - Dog face
-🦊 - Fox face
-🐻 - Bear face
-🐼 - Panda face
+[
+    🐶
+    🦊
+    🐻
+    🐼
+]
 ```
+`merge_with` <br>
+```
+[
+    Dog face
+    Fox face
+    Bear face
+    Panda face
+]
+```
+
 ### Merge the two lists: `array_Emoji_input.txt` and `Emoji_description.txt`<br>
+
+**Whats the code?** <br>
+
+- There are two `pointers`, `p1` and `p2`, start at the heads (or top of the two lists) of the two `linked lists`. <br>
+- While both `pointers` have `nodes`:
+
+1. Create a `new node` by combining the data from `p1` and `p2` ("😀 - Happy Face").
+2. Add this `new node` to the `merged` list.
+3. Move both `pointers` to the `next node` in their respective lists.<br>
+
+- Once one list is exhausted, any remaining `nodes` from the other list are `appended` to the merged list. <br>
 
 ```
     def merge_with(self, other):
@@ -141,7 +170,14 @@ Building upon the `Command-Driven` framework used in `PokemonArray_ListManipulat
 
 ### Displaying the `Merged` Lists
 
-- The `display` method traverses the merged list and prints each node sequentially.  
+- The `display` method traverses the merged linked list, `node` by `node` and prints the data in each node sequentially.<br>  
+
+**Whats the code?** <br>
+
+- A `pointer`, **current**, starts at the head of the linked list.<br>
+- While `current` is not `None` (meaning there are still `nodes` to process): 
+- 1. Print the data in the `current node`.<br>
+- 2. Move the pointer to the `next node`.<br>
 
 ```
 # Display the list
@@ -152,14 +188,35 @@ Building upon the `Command-Driven` framework used in `PokemonArray_ListManipulat
             current = current.next
 ```
 
+#### Why use this?
+
+- To visually confirm the structure and contents of the linked list. <br>
+- This is useful for debugging or simply understanding how the data is stored in the list.<br>
+
 - **Runtime Complexity**: `O(n + m)` where `n` and `m` are the lengths of the two lists.
 - **Use Case**: Useful in scenarios like merging data streams or when sorting datasets using divide-and-conquer techniques. <br>
 
 ### Reverse a Linked List
 
-- **Description**: Reverse the order of the nodes `(Emojis)` in the linked lists.
+- **Description**: 
+The `reverse` method changes the order of the nodes `(Emojis)` in the linked lists. (A...Z to Z...A)
 
 ### Reverse the combined Linked Lists
+
+**Whats the code?** <br>
+
+- Three `pointers`, `prev`, `current`, and `next_node`, are used: <br>
+
+1. Start with `prev` as `None` and `current` pointing to the `head` of the list.<br> 
+
+2. For each `node`:<br>
+
+- Save the next `node` in `next_node`. <br>
+- Reverse the direction of the `next` `pointer` so it points to `prev`.<br>
+- Move `prev` to `current` and `current` to `next_node`.
+
+3. When the traversal is complete, `prev` will point to the new head of the reversed list. <br>
+
 
 ```
     def reverse(self):
@@ -211,4 +268,11 @@ Deletion: 0(1) - Constant time if the deletion point is known.
 - Memory Efficiency: Suitable for environments where memory allocation patterns are unpredictable.
 - Scenarios with Frequent Insertions/Deletions: Common in real-time systems, operating systems, or undo features in software. <br>
 
+---
 
+**Noted Sources**:
+
+- https://docs.python.org/3/tutorial/datastructures.html <br>
+- https://docs.python.org/3/library/collections.html#collections.deque <br>
+
+---
