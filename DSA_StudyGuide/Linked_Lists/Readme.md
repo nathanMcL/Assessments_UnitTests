@@ -34,7 +34,7 @@ The `Linked_Lists.py` script is a command-driven Python program designed to demo
 
 - 1. **Understanding the Linked List Structure**:
 - A `Linked List` in programming is a `linear` `data structure` where data is stored in individual `nodes`. <br>
-- Each **emoji** (icon 😬) and its **description** (Awkward) are treated as `nodes`.<br>
+Each **emoji** (icon 😬) and its **description** (Awkward) are treated as `nodes`.<br>
 
 1. What is a `node`? <br>
 
