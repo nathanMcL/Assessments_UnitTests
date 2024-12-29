@@ -66,7 +66,7 @@ Each `node` contains two parts: the data and the reference or `pointer` to the n
 - The `data` like an 👽 or its description `Alien`.<br>
 👾 - `Game alien`, 🤖 - `Robot`, 👻 - `Ghost`...<br>
 
-# Each emoji description and Icon are stored as an individual Node.
+### Each emoji description and Icon are stored as an individual Node.
 ```
 class Node:
     def __init__(self, data):
