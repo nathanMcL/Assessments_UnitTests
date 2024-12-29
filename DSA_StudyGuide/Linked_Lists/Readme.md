@@ -198,7 +198,7 @@ If the list do not have the same amount of elements, or if list # 1 has 10 eleme
 
 ### Reverse a Linked List
 
-- **Description**: 
+- **Description**: <br>
 The `reverse` method changes the order of the nodes `(Emojis)` in the linked lists. (A...Z to Z...A)
 
 ### Reverse the combined Linked Lists
