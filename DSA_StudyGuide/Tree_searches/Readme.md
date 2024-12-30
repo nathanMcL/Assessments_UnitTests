@@ -161,7 +161,7 @@ BFS Traversal Complete!
 ### `Tree`
 
 A `tree` search algorithm works by systematically exploring the `nodes` of a tree data structure, starting at the `root node`, to find a specific node that satisfies the desired conditions of a problem, essentially navigating through the hierarchical structure of the tree to reach the solution. <br>
-The `Tree` search alogrithm does this by examining *each* `child node` in a defined order, like `depth-first` or `breadth-first` search; it essentially "walks" through the tree, checking each node until it finds the target value or reaches a point where no further exploration is needed.<br>
+The `Tree` search algorithm does this by examining *each* `child node` in a defined order, like `depth-first` or `breadth-first` search; it essentially "walks" through the tree, checking each node until it finds the target value or reaches a point where no further exploration is needed.<br>
 
 #### How the Tree Search Algorithms Functions
 
@@ -169,7 +169,7 @@ Traversal Strategies:<br>
 
 `Depth-First Search (DFS)`:<br>
 
-1. Explores as far as possible along each branch before backtracking.<br>
+1. Explore as far as possible along each branch before backtracking.<br>
 2. Uses a stack (can be implicit with recursion) to keep track of nodes.<br>
 
 `Breadth-First Search (BFS)`:<br>
@@ -179,7 +179,7 @@ Traversal Strategies:<br>
 
 `Goal-Based` Search Criteria: <br>
 
-1. Looks for a specific node or value within the tree.<br>
+1. Look for a specific node or value within the tree.<br>
 
 `Exhaustive` Search: <br>
 
@@ -211,7 +211,7 @@ Step 1: `Read` and `filter` the data from the test files. <br>
 Step 2: `Build` the `Tree`: <br>
 
 - Root Node: `Root` = 😀<br>
-- 1. Level 1: First `3` `emoji icons` as `children`of the `root`.<br>
+- 1. Level 1: First `3` `emoji icons` as `children` of the `root`.<br>
 - 2. Level 2: First `6` `emoji descriptions` are distributed among `Level 1` *`nodes`*(2 children each).<br>
 - 3. Level 3: First `9` `merged` emoji-description pairs as `grandchildren` (3 per level 2 child). 
 
@@ -241,7 +241,7 @@ If some `nodes` are appearing under multiple `parents`.<br>
 Ensure `unique` children are created for each `parent`:<br>
 
 - 1. Use `indices` while `slicing` data.<br>
-- 2. Confirm the `nodes` are assigned only *once* during the tree construciton.<br> 
+- 2. Confirm the `nodes` are assigned only *once* during the tree construction.<br> 
 
 ...*Output Clarity*...<br>
 Label the `node` level and/or/both? `parent-child relationships`.<br>
@@ -251,7 +251,7 @@ Label the `node` level and/or/both? `parent-child relationships`.<br>
 
 ...*Dynamic Levels*...<br>
 Problem:<br>
-The `tree` construction is hardcoded, using a fixed number of children (2 children per parent, 3 garndchildren per child)... That is my issue when doing the online coding challenges. I have been able to get the `"hardcoded"` portion of the challenges, thats😀great! But!!!😧 That does not allow for multiple test case files to be ran with the set code.🧐...<br> 
+The `tree` construction is hardcoded, using a fixed number of children (2 children per parent, 3 grandchildren per child)... That is my issue when doing the online coding challenges. I have been able to get the `"hardcoded"` portion of the challenges, thats😀great! But!!!😧 That does not allow for multiple test case files to be ran with the set code.🧐...<br> 
 
 🤓...💡...😀<br>
 
