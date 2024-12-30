@@ -16,6 +16,7 @@
 Using these test files: <br> 
 `Emoji_description.txt`  <br>
 `array_Emoji_input.txt`  <br>
+`Merged_Emoji_LinkedList`<br>
 
 Located in this sub-directory:  <br>
 `DSA_StudyGuide\DSA_Text_files\see_test_files.txt`  <br>
@@ -25,7 +26,7 @@ Using the Python scripts: <br>
 - Main: `Tree_Searches.py`<br>
 - Depth-First Search (DFS): `dfs.py`<br>
 - Breadth-First Search (BFS): `bfs.py` <br>
-- Tree: ` ` <br>
+- Tree: `tree.py` <br>
 - Binary Tree: ` ` <br>
 - Binary Search Tree: ` ` <br>
 - Red-Black Tree: ` ` <br>
