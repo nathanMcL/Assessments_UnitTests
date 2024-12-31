@@ -496,7 +496,7 @@ def display_BTPC_relationships(root):
     display_BTPC_relationships(root)
 ```
 
-# The End...
+#### The End...
 
 ```
     print("Binary Tree Traversal Complete!")
@@ -542,14 +542,131 @@ Parent: 😸 - Grinning cat (Leaf Node), Left Child: None, Right Child: None
 
 ---
 
-### `Binary Search Tree (BST)`
+
+
+## `Binary Search Tree (BST)`
+
+A `Binary Search Tree` (*`BST`*) is a specialized form of the `Binary Tree`.<br>
+This `binary tree` ensures its `nodes` are stored in a way that allows for efficient: `searching`, `insertion`, and `deletion`.<br>
+
+### BST Rules
+
+1. `Left Subtree`: Contains only `nodes` with values less than the `parent` `node's` value.<br>
+2. `Right Subtree`: Contains only `nodes` with values `greater` than the `parent` `node's` value.<br>
+3. `No Duplicates`: Duplicate `nodes` are not allowed in a `BST`.<br>
+
+### BST Features
+
+1. `Dynamic Sorted Structure`: Unlike `arrays` or `linked lists`, `BSTs` dynamically maintain `sorted order`.<br>
+2. `Hierarchical Organization`: `Nodes` are organized into `parent-child` relationships, ensuring fast lookup times for balanced trees.
+
+
+
+---
 
 - **Big`O` Runtime:**  
-  - Insert, Delete, Search: O(log n) (average), O(n) (worst case, unbalanced).  
+  - Insert, Delete, Search: O(log n) (average), O(n) (worst case, unbalanced). 
 
-- **Use Cases:**  
-  - Efficient searching and sorting.
-  - Dynamic sets and dictionaries.
+#### Operations and Their Runtimes
+
+```
+Operation ->	Average Case ->	Worst Case (Unbalanced Tree) ->	Explanation
+Search    -> 	  O(log n)   ->        O(n)                  -> Tree height determines performance; log n for balanced trees, linear for unbalanced.
+Insert	  ->  O(log n)	   ->        O(n)	                 -> Similar to search as the tree grows dynamically.
+Delete	  ->  O(log n)	   ->        O(n)	                 -> Involves locating and rearranging nodes.
+```
+
+#### Use Cases:
+
+1. Dynamic Searching: Efficient for dynamically updating data sets while preserving sorted order.<br>
+2. Set Implementations: Useful for implementing sets and multisets.<br>
+3. Database Indexing: Often used in databases for indexing records due to its ordered nature. <br>
+
+---
+
+#### BST Example
+
+```
+  Level 1
+    50
+   /  \
+  Level 2
+Left  Right  
+  30   70
+ / \   / \
+  level 3
+20 40 60 80
+```
+
+Left side values are less than the right side's values.<br>
+
+#### Defining the BST Node class:
+
+```
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+```
+
+#### Insert Function:
+
+```
+def insert(root, value):
+    if root is None:
+        return BSTNode(value)
+    if value < root.value:
+        root.left = insert(root.left, value)
+    elif value > root.value:
+        root.right = insert(root.right, value)
+    return root
+```
+
+#### Search Function:
+
+```
+def search(root, value):
+    if root is None or root.value == value:
+        return root
+    if value < root.value:
+        return search(root.left, value)
+    return search(root.right, value)
+```
+
+#### Delete Function:
+
+```
+def delete(root, value):
+    if root is None:
+        return root
+    if value < root.value:
+        root.left = delete(root.left, value)
+    elif value > root.value:
+        root.right = delete(root.right, value)
+    else:
+        if root.left is None:
+            return root.right
+        elif root.right is None:
+            return root.left
+        temp = find_min(root.right)
+        root.value = temp.value
+        root.right = delete(root.right, temp.value)
+    return root
+
+def find_min(node):
+    while node.left:
+        node = node.left
+    return node
+```
+
+
+
+
+
+
+
+
 
 ---
 
@@ -568,4 +685,5 @@ Parent: 😸 - Grinning cat (Leaf Node), Left Child: None, Right Child: None
 
 - [Python Data Structures](https://docs.python.org/3/tutorial/datastructures.html)  
 - [Python Collections](https://docs.python.org/3/library/collections.html#collections.deque)
-- [Python Root Nodes](https://docs.python.org/3/library/ast.html#root-nodes)  
+- [Python Root Nodes](https://docs.python.org/3/library/ast.html#root-nodes)
+- [Binary Tree Library](https://binarytree.readthedocs.io/en/main/index.html#)  
