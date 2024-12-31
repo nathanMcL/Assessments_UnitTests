@@ -570,8 +570,8 @@ This `binary tree` ensures its `nodes` are stored in a way that allows for effic
 #### Operations and Their Runtimes
 
 ```
-Operation ->	Average Case      ->	Worst Case (Unbalanced Tree) ->	Explanation
-Search    -> 	  O(log n)        ->        O(n)                  -> Tree height determines performance; log n for balanced trees, linear for unbalanced.
+Operation ->	Average Case       ->	Worst Case (Unbalanced Tree) ->	Explanation
+Search    -> 	  O(log n)         ->        O(n)                  -> Tree height determines performance; log n for balanced trees, linear for unbalanced.
 Insert	  ->      O(log n)	   ->        O(n)	                 -> Similar to search as the tree grows dynamically.
 Delete	  ->      O(log n)	   ->        O(n)	                 -> Involves locating and rearranging nodes.
 ```
