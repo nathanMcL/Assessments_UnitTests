@@ -388,17 +388,157 @@ Key Difference:<br>
 #### Binary Representation:
 
 ```
+    Level 1
       😀
     /    \
+    Level 2
   😂     😍
  /  \    /  \
+    Level 3
 🤔  😎 🥳  🤩
 ```
 
+### `binary_tree.py` code
 
+#### Define the Binary Tree Node class.<br>
 
+```
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+```
 
+#### Display the nodes of the Binary Tree Levels
 
+```
+def display_binary_tree_levels(root):
+    if not root:
+        print("Binary Tree is empty.")
+        return
+    queue = deque([(root, 0)])
+    (node, level)
+    current_level = 0
+    level_nodes = []
+
+    print("\nBinary Tree Level-Based Output:")
+    while queue:
+        node, level = queue.popleft()
+        if level > current_level:
+            print(f"Level {current_level + 1}: {', '.join(level_nodes)}")
+            level_nodes = []
+            current_level = level
+        level_nodes.append(node.value)
+        if node.left:
+            queue.append((node.left, level + 1))
+        if node.right:
+            queue.append((node.right, level + 1))
+    # Print the last level
+    if level_nodes:
+        print(f"Level {current_level + 1}: {', '.join(level_nodes)}")
+```
+
+#### Display the Binary Tree Parent-Child relationships
+
+```
+def display_BTPC_relationships(root):
+    if not root:
+        print("Binary Tree is empty.")
+        return
+    
+    print("\nBinary Tree Parent-Child Relationships:")
+    queue = deque([root])
+    while queue:
+        node = queue.popleft()
+        left_child = node.left.value if node.left else "None"
+        right_child = node.right.value if node.right else "None"
+        print(f"Parent: {node.value}, Left Child: {left_child}, Right Child: {right_child}")
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+```
+
+#### Simulate the Binary Tree Search Algorithm
+
+```def simulate_binary_tree():```
+
+#### Step 1: Load the test data
+
+```
+ base_dir = os.path.dirname(os.path.abspath(__file__))
+    binarytree_description_path = os.path.join(base_dir, "../DSA_Test_files/BinaryTree_Descriptions_Input.txt")
+    binarytree_emoji_icons_path = os.path.join(base_dir, "../DSA_Test_files/BinaryTree_Emoji_Input.txt")
+```
+
+#### Step 2: Combine test data for nodes
+
+```
+    combined_values = [f"{emoji} - {desc}" for emoji, desc in zip(binarytree_emoji_icons[:len(binarytree_descriptions)], binarytree_descriptions)]
+```
+
+#### Step 3: Build the Binary Tree
+
+```
+    root = build_binary_tree(combined_values)
+```
+
+#### Step 4: Display the Binary Tree Level-Based Ouput
+    
+```
+    display_binary_tree_levels(root)
+```
+
+#### Step 5: Display the Bonary Tree Parent-Child Relationships
+
+```
+    display_BTPC_relationships(root)
+```
+
+# The End...
+
+```
+    print("Binary Tree Traversal Complete!")
+```
+
+#### `binary_tree.py` output
+
+```
+Simulating the Binary Tree Search Algorithm:
+
+Binary Tree Level-Based Output:
+Level 1: 😾 - Pouting cat
+Level 2: 😿 - Crying cat, 🙀 - Scared cat
+Level 3: 😽 - Kissing cat, 😼 - Smug cat, 😻 - Love-struck cat (heart eyes), 😹 - Laughing cat (tears of joy)
+Level 4: 😸 - Grinning cat, 😺 - Happy cat
+
+Binary Tree Parent-Child Relationships:
+Parent: 😾 - Pouting cat, Left Child: 😿 - Crying cat, Right Child: 🙀 - Scared cat
+Parent: 😿 - Crying cat, Left Child: 😽 - Kissing cat, Right Child: 😼 - Smug cat
+Parent: 🙀 - Scared cat, Left Child: 😻 - Love-struck cat (heart eyes), Right Child: 😹 - Laughing cat (tears of joy)
+Parent: 😽 - Kissing cat, Left Child: 😸 - Grinning cat, Right Child: 😺 - Happy cat
+Parent: 😼 - Smug cat, Left Child: None, Right Child: None
+Parent: 😻 - Love-struck cat (heart eyes), Left Child: None, Right Child: None
+Parent: 😹 - Laughing cat (tears of joy), Left Child: None, Right Child: None
+Parent: 😸 - Grinning cat, Left Child: None, Right Child: None
+Parent: 😺 - Happy cat, Left Child: None, Right Child: None
+Binary Tree Traversal Complete!
+```
+
+---
+
+...*Notes*...<br>
+Improvements:
+
+1. Highlight `Leaf` Nodes:
+    - Add a marker for `nodes` with children to indicate they are leaf nodes explicity...<br>
+    
+```
+Parent: 😸 - Grinning cat (Leaf Node), Left Child: None, Right Child: None
+```
+
+2. Be able to "step-through" the `parent-child` relationships interactively, to observe each node's connection in real time, not just printed out at once...<br>
 
 ---
 
@@ -427,4 +567,5 @@ Key Difference:<br>
 ## Noted Sources
 
 - [Python Data Structures](https://docs.python.org/3/tutorial/datastructures.html)  
-- [Python Collections](https://docs.python.org/3/library/collections.html#collections.deque)  
+- [Python Collections](https://docs.python.org/3/library/collections.html#collections.deque)
+- [Python Root Nodes](https://docs.python.org/3/library/ast.html#root-nodes)  
