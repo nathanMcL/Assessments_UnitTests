@@ -17,6 +17,8 @@ Using these test files: <br>
 `Emoji_description.txt`  <br>
 `array_Emoji_input.txt`  <br>
 `Merged_Emoji_LinkedList`<br>
+`BST_Pokemon_color_alignment`<br>
+`BST_Pokemon_Type_color_list`<br>
 
 Located in this sub-directory:  <br>
 `DSA_StudyGuide\DSA_Text_files\see_test_files.txt`  <br>
@@ -27,8 +29,8 @@ Using the Python scripts: <br>
 - Depth-First Search (DFS): `dfs.py`<br>
 - Breadth-First Search (BFS): `bfs.py` <br>
 - Tree: `tree.py` <br>
-- Binary Tree: ` ` <br>
-- Binary Search Tree: ` ` <br>
+- Binary Tree: `binary_tree.py`<br>
+- Binary Search Tree: `binary_search_tree.py`<br>
 - Red-Black Tree: ` ` <br>
 
 
@@ -570,10 +572,10 @@ This `binary tree` ensures its `nodes` are stored in a way that allows for effic
 #### Operations and Their Runtimes
 
 ```
-Operation ->	Average Case       ->	Worst Case (Unbalanced Tree)     ->	Explanation
-Search    -> 	  O(log n)         ->        O(n)                        -> Tree height determines performance; log n for balanced trees, linear for unbalanced.
-Insert	  ->      O(log n)	   ->        O(n)	                 -> Similar to search as the tree grows dynamically.
-Delete	  ->      O(log n)	   ->        O(n)	                 -> Involves locating and rearranging nodes.
+Operation ->	Average Case ->	Worst Case (Unbalanced Tree) ->	Explanation
+Search    -> 	  O(log n)   ->        O(n)                  -> Tree height determines performance; log n for balanced trees, linear for unbalanced.
+Insert	  ->  O(log n)	   ->        O(n)	                 -> Similar to search as the tree grows dynamically.
+Delete	  ->  O(log n)	   ->        O(n)	                 -> Involves locating and rearranging nodes.
 ```
 
 #### Use Cases:
@@ -660,6 +662,22 @@ def find_min(node):
     return node
 ```
 
+...`Notes`...*<br>
+
+ok, the binary search tree is almost like the least-to-greatest filter option.<br>
+
+Currently(1/2/25) Attempting to create a visual representation is challenging.<br>
+
+There are a couple of issues...<br>
+
+  - I need to move on and work on understanding the next section... `:(`<br>
+
+  - Learning to use the `binarytree` library with my data.
+
+  - Learning how to utilize `matplotlib.plyplot`. I thought, that because of the `BST level-based output`, when printed to the terminal, some of the mapped data overlaps the other node data and does not make sense. So, *`note`* to future self, Using matplotlib(*and* HTML, Text, JSON), `I` = `you` wants to be able to save the BST level-based output such that the `entire` *`Binary Search Tree`* structure can be viewed.<br>
+
+     - Next, *You* want to be able to visually traverse the whole (if desired) structure and view the mapped `BST level-based output`.<br>
+     - The purpose, or idea is to better visuallize how the traversal functions using a data source.<br>   
 
 
 
@@ -686,4 +704,5 @@ def find_min(node):
 - [Python Data Structures](https://docs.python.org/3/tutorial/datastructures.html)  
 - [Python Collections](https://docs.python.org/3/library/collections.html#collections.deque)
 - [Python Root Nodes](https://docs.python.org/3/library/ast.html#root-nodes)
-- [Binary Tree Library](https://binarytree.readthedocs.io/en/main/index.html#)  
+- [Binary Tree Library](https://binarytree.readthedocs.io/en/main/index.html#)
+- [Matplotlib](https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot)  
