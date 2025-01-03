@@ -690,12 +690,78 @@ There are a couple of issues...<br>
 
 ### `Red-Black Tree`
 
+...*`Ok!`*...
+The `Red-Black Tree Search` algorithm's discription of how it functions is different than the previous... Just from basic reading.<br>
+...End of *`Ok!`*...
+
+
+A `Red-Black Tree Search` algorithm is a `self-balancing` binary search tree. It ensures balance by maintaining certain properties:<br>
+
+1. Each `node` is either `*red*` or `*black*`.<br>
+        - 1. What does that mean that *each* `node` is `*red*` or `*black*`?<br>
+2. The `root` is always `*black*`.<br>
+3. No two consecutive `red nodes` exist (a red node cannot have a red child).<br>
+4. Every path from a `node` to its descendant `null` `pointers` has the same number of `black nodes`.<br>
+5. The longest path from the `root` to a `leaf` is no more than twice the shortest path.<br>
+
+These rules ensure the tree remains approximately balanced, allowing operations like insertion, deletion, and search to run in O(log n) time.<br>
+
+#### How does the `Red-Black Tree Search` function?
+
+The search operation in a Red-Black Tree is similar to searching in a regular binary search tree:<br>
+
+1. Start at the `root`: Begin the search at the `root` `node` of the tree.<br>
+2. `Compare`: Compare the `target value` with the `current node's value`.
+3. Navigate:<br>
+    - If the `target value` is `equal to` the `current node's value`, the search is successful, and the node is found.<br> 
+    - If the `target value` is `less than` the `current node's value`, move to the `left child`.<br> 
+    - If the `target value` is `greater than` the `current node's value`, move to the `right child`.<br> 
+
+#### Basic Python Example
+
+Define the `Red-Black Tree Search` Node class.<br> 
+```
+class Node:
+    def __init__(self, value, color):
+        self.value = value
+        self.color = color
+        self.left = None
+        self.right = None
+```
+
+<br>
+
+```
+def search(root, value):
+    if root is None:
+        return None
+
+    if value == root.value:
+        return root
+    elif value < root.value:
+        return search(root.left, value)
+    else:
+        return search(root.right, value)
+```
+
+
+
+
+
+---
+
+#### `Red-Black Tree Search` *BEST* Method use:
+
+  - Efficient at looking up dynamic datasets.<br>
+  - Situations requiring frequent insertions and deletions while preserving order.<br>
+
 - **Big`O` Runtime:**  
   - Insert, Delete, Search: O(log n).  
 
 - **Use Cases:**  
   - Maintaining a balanced tree structure dynamically.
-  - Storing ordered data while ensuring balance.
+  - Ensures that the height of the tree remain logarthmic, avoiding performance degradation.
+  - Ideal for implementing ordered maps, sets, or associative containers.
 
 ---
 
