@@ -30,4 +30,7 @@ Using Python coded scripts: <br>
 
 1. **Arrays**: `List Manipulation` <br>
 2. **Linked Lists**:  `Merging`, `Reverseing`, & `Comparing` <br>
-3. **Tree Search Algorithms**: `Depth First Search (DFS)`, `Breadth-First Search (BFS)`, `Tree`, `Binary Tree`, `Binary Search Tree`, `Red-Black Tree Search`<br>
+3. **Tree** searches: `Depth-First Search (DFS)`, `Breadth-First Search (BFS)`, `Tree`, `Binary Tree`, `Binary Search Tree`, `Red-Black Tree`, etc.<br>
+4. **Hash Tables**: 
+
+---
