@@ -790,7 +790,7 @@ Turtwig vs Pikachu
 0000001    1111110
 
 ```
-In the above section, I think that Turtwig is less than Pikachu because the letters in Pikachu's name: `Pikach` have a Unicode value *greater than* the letters in Turtwig's name: `Turtwi`. So, to me, Pikachu receives a value indicator of `"1"`. Meaning Turtwig has less positive values. <br>
+In the above section, I think that Turtwig is less than Pikachu because the letters in Pikachu's name: `Pikach` have a Unicode value *less than* the letters in Turtwig's name: `Turtwi`. So, to me, Pikachu receives a value indicator of `"1"`. Meaning Turtwig has less positive values. <br>
 
 ...Ok!...<br>
 
