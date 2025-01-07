@@ -690,15 +690,9 @@ There are a couple of issues...<br>
 
 ### `Red-Black Tree`
 
-...*`Ok!`*...
-The `Red-Black Tree Search` algorithm's discription of how it functions is different than the previous... Just from basic reading.<br>
-...End of *`Ok!`*...
-
-
 A `Red-Black Tree Search` algorithm is a `self-balancing` binary search tree. It ensures balance by maintaining certain properties:<br>
 
 1. Each `node` is either `*red*` or `*black*`.<br>
-        - 1. What does that mean that *each* `node` is `*red*` or `*black*`?<br>
 2. The `root` is always `*black*`.<br>
 3. No two consecutive `red nodes` exist (a red node cannot have a red child).<br>
 4. Every path from a `node` to its descendant `null` `pointers` has the same number of `black nodes`.<br>
@@ -715,7 +709,7 @@ The search operation in a Red-Black Tree is similar to searching in a regular bi
 3. Navigate:<br>
     - If the `target value` is `equal to` the `current node's value`, the search is successful, and the node is found.<br> 
     - If the `target value` is `less than` the `current node's value`, move to the `left child`.<br> 
-    - If the `target value` is `greater than` the `current node's value`, move to the `right child`.<br> 
+    - If the target value is greater than the current node's value, move to the right child.<br> 
 
 #### Basic Python Example
 
@@ -745,7 +739,154 @@ def search(root, value):
 ```
 
 
+#### `red_black_tree.py`output
 
+Now for my next trick! lol... Let's describe the red-black tree search output. Honestly, with more time I would find a way to visualy discribe this tree differently. I would like to have the outputtes data be represented in a hierarchly structure.<br>
+
+#### Level 1: The Lexicographically `root`
+
+Starting at the root level. In a Red-Black Tree our entry point into the tree is *`Turtwig`*.<br>
+`Turtwig` is the `first key` inserted into the binary search tree.<br>
+
+...*Pump the breaks*... <br>
+Why is `Turtwig` the `Root` node of this `Red-Black Tree`? <br>
+Recall the `array_Pokemon_input.txt` test file... `Turtwig` is indexed around the `2oth` location on the list...<br>
+Looking at the test file, I thought `Pikachu` would be the `root` of the tree...<br>
+
+The `root` of the tree `is not` determined by the position of a node in the input list (like `Pikachu` being first). It depends on the `binary search tree (BST)` *properties* and the *comparison logic* during `insertion`.<br>
+
+How the `root` is determined:<br>
+
+- 1. When `nodes` are `inserted` into a `binary search tree`, the `keys` are compared to determine their placement: <br>
+    - Keys that are *smaller* (lexicographically) go to the `left`.<br>
+    - Keys that are *larger* go to the `right`.<br>
+    - In this case, the comparison is based on the *full string* representation of each nodes data:<br>
+        - Data being: Pokémon's name, Pokémon's Character Type(Electric, Water...), and the color_list data.<br>
+
+`Turtwig`: (Grass, 🟩 = Grass Green) is *lexicographically* `smaller` than `Pikachu`: (Electric, 🟨 = Bright Yellow)<br> 
+is it thought?<br>
+
+Consider this where: `"A" < "B", "a" < "b"`.<br>
+
+- *Side Note* If the first character of *two strings* are the same, then the next characters are compared:<br>
+
+`Turtwig (Grass, 🟩 = Grass Green)` is *smaller than* `Pikachu (Electric, 🟨 = Bright Yellow)`, because `"T" < "P"` (the first characters).<br>
+
+...*Hmmm*... Wait! Why, or how would  "T" be less than "P"...<br>
+But if you view the Wiki for the List of `Unicode Characters`, you see that `"P"` is valued at `80`, and "T" at `84`...<br>
+```
+Code   ->	Glyph	Decimal	Octal	Description	           #
+U+0050 ->    P	     80	    0120	Latin Capital letter P	0049
+U+0054 ->    T	     84	    0124	Latin Capital letter T	0053
+```
+This is because we are comparing the *whole* `string` of data, not just the Pokemon character names.<br>
+
+This is how I am thinking of it:<br>
+*lexicographically* where `smaller` than the proceeding alphabetical character...<br>
+```
+Turtwig vs Pikachu
+0000001    1111110
+
+```
+In the above section I thinking that Turtwig is less than Pikachu because, the letters in Pikachu's name: `Pikach` have a unicode value less than the letters in Turtwig's name: `Turtwi`. So, to me Pikachu recieves a value indicator of `"1"`. Meaning Turtwig has less posative values. <br>
+
+...Ok!...<br>
+
+The code compares the *whole* string of combined data, including the parethises, comma, equals symbols etc.: <br>
+
+```
+Pikachu (  Electric  , 🟨 = Bright Yellow)
+1111110 == 11010111  1
+Turtwig (  Grass, 🟩 = Grass Green)
+0000001 == 001010
+```
+I am not too sure if I would or should line up the character equally to visually show the *lexicographically* depiction...<br> 
+(*TODO*: finish this display. Should the characters line up or not?)<br>
+
+...Anyways... The Pikachu `string-data` receives more positive values than Turtwig, making Turtwig the root of this red_black_tree.py list. <br>
+
+#### Level 2
+
+- **Snorlax (Normal, ⬜ = Gray) (red)**
+- **Zoroark (Dark, ⬛ = Dark Gray) (red)**
+
+#### Level 3
+
+- **Rayquaza (Dragon, 🟦 = Blue) (black)**
+- **Togepi (Fairy, 🟪 = Pink) (black)**
+- **Zekrom (Electric, 🟨 = Bright Yellow) (black)**
+
+...Continued levels...<br>
+
+#### Levels 12 & 13
+
+- **Level 12**: `Chespin (Grass, 🟩 = Grass Green) (black)`
+- **Level 13**: `Corviknight (Flying, 🟦 = Sky Blue) (red)`
+
+
+
+```
+Enter a command: display
+
+Red-Black Tree Structure:
+`- Turtwig (Grass, 🟩 = Grass Green) (black)
+   |- Snorlax (Normal, ⬜ = Gray) (red)
+   |  |- Rayquaza (Dragon, 🟦 = Blue) (black)
+   |  |  |- Pikachu (Electric, 🟨 = Bright Yellow) (red)
+   |  |  |  |- Mewtwo (Psychic, 🟧 = Light Red) (black)
+   |  |  |  |  |- Lugia (Psychic, 🟧 = Light Red) (red)
+   |  |  |  |  |  |- Eevee (Normal, ⬜ = Gray) (black)
+   |  |  |  |  |  |  |- Charmander (Fire, 🟧 = Fire Orange) (black)
+   |  |  |  |  |  |  |  |- Bulbasaur (Grass, 🟩 = Grass Green) (black)
+   |  |  |  |  |  |  |  |  |- Ampharos (Electric, 🟨 = Bright Yellow) (black)
+   |  |  |  |  |  |  |  |  `- Butterfree (Bug, 🟩 = Light Green) (black)
+   |  |  |  |  |  |  |  |     `- Celebi (Grass, 🟩 = Grass Green) (red)
+   |  |  |  |  |  |  |  `- Dialga (Dragon, 🟦 = Blue) (red)
+   |  |  |  |  |  |  |     |- Deoxys (Psychic, 🟧 = Light Red) (black)
+   |  |  |  |  |  |  |     |  |- Cyndaquil (Fire, 🟧 = Fire Orange) (red)
+   |  |  |  |  |  |  |     |  |  |- Chespin (Grass, 🟩 = Grass Green) (black)
+   |  |  |  |  |  |  |     |  |  |  `- Corviknight (Flying, 🟦 = Sky Blue) (red)
+   |  |  |  |  |  |  |     `- Diancie (Fairy, 🟪 = Pink) (red)
+   |  |  |  |  |  |  `- Greninja (Water, 🟦 = Aqua Blue) (black)
+   |  |  |  |  |  |     |- Gengar (Ghost, 🟦 = Dark Blue) (red)
+   |  |  |  |  |  |     |  |- Gardevoir (Psychic, 🟧 = Light Red) (black)
+   |  |  |  |  |  |     |  `- Giratina (Ghost, 🟦 = Dark Blue) (black)
+   |  |  |  |  |  |     `- Lucario (Fighting, 🟥 = Fire Truck Red) (red)
+   |  |  |  |  |  |        |- Keldeo (Water, 🟦 = Aqua Blue) (black)
+   |  |  |  |  |  |        |  |- Grookey (Grass, 🟩 = Grass Green) (red)
+   |  |  |  |  |  |        |  `- Koraidon (Dragon, 🟦 = Blue) (red)
+   |  |  |  |  |  `- Metagross (Steel, 🔳 = Steel Blue) (black)
+   |  |  |  |  |     |- Lycanroc (Rock, 🟫 = Light Brown) (black)
+   |  |  |  |  |     |  |- Lunala (Ghost, 🟦 = Dark Blue) (red)
+   |  |  |  |  |     |  `- Marshadow (Ghost, 🟦 = Dark Blue) (red)
+   |  |  |  |  `- Pidgeot (Flying, 🟦 = Sky Blue) (red)
+   |  |  |  |     |- Palkia (Dragon, 🟦 = Blue) (black)
+   |  |  |  |     |  |- Miraidon (Dragon, 🟦 = Blue) (red)
+   |  |  |  |     |  `- Pawmi (Electric, 🟨 = Bright Yellow) (red)
+   |  |  `- Snivy (Grass, 🟩 = Grass Green) (red)
+   |  |     |- Reshiram (Fire, 🟧 = Fire Orange) (black)
+   |  |     |  `- Rowlet (Grass, 🟩 = Grass Green) (red)
+   |  `- Togepi (Fairy, 🟪 = Pink) (black)
+   |     |- Squirtle (Water, 🟦 = Aqua Blue) (red)
+   |     |  |- Solgaleo (Steel, 🔳 = Steel Blue) (black)
+   |     |  |  `- Sprigatito (Grass, 🟩 = Grass Green) (red)
+   |     `- Treecko (Grass, 🟩 = Grass Green) (black)
+   `- Zoroark (Dark, ⬛ = Dark Gray) (red)
+   |     |- Squirtle (Water, 🟦 = Aqua Blue) (red)
+   |     |  |- Solgaleo (Steel, 🔳 = Steel Blue) (black)
+   |     |  |  `- Sprigatito (Grass, 🟩 = Grass Green) (red)
+   |     `- Treecko (Grass, 🟩 = Grass Green) (black)
+   `- Zoroark (Dark, ⬛ = Dark Gray) (red)
+   |     `- Treecko (Grass, 🟩 = Grass Green) (black)
+   `- Zoroark (Dark, ⬛ = Dark Gray) (red)
+   `- Zoroark (Dark, ⬛ = Dark Gray) (red)
+      |- Zekrom (Electric, 🟨 = Bright Yellow) (black)
+      |  |- Yveltal (Dark, ⬛ = Dark Gray) (red)
+      |  |  |- Xerneas (Fairy, 🟪 = Pink) (black)
+      |  |  `- Zamazenta (Steel, 🔳 = Steel Blue) (black)
+      |  |     |- Zacian (Steel, 🔳 = Steel Blue) (red)
+      |  |     `- Zarude (Dark, ⬛ = Dark Gray) (red)
+```
 
 
 ---
@@ -772,3 +913,5 @@ def search(root, value):
 - [Python Root Nodes](https://docs.python.org/3/library/ast.html#root-nodes)
 - [Binary Tree Library](https://binarytree.readthedocs.io/en/main/index.html#)
 - [Matplotlib](https://matplotlib.org/stable/api/pyplot_summary.html#module-matplotlib.pyplot)  
+- [Unicode Value List](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
+
