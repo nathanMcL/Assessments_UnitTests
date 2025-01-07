@@ -741,12 +741,14 @@ def search(root, value):
 
 #### `red_black_tree.py`output
 
-Now for my next trick! lol... Let's describe the red-black tree search output. Honestly, with more time I would find a way to visualy discribe this tree differently. I would like to have the outputtes data be represented in a hierarchly structure.<br>
+Now for my next trick! lol... Let's describe the red-black tree search output. Honestly, with more time I would find a way to visually describe this tree differently. I would like to have the output data represented in a hierarchical structure.<br>
+
+- A `Red-Black Tree` is a *balanced* `Binary Search Tree` with *additional rules* for maintaining balance during insertion and deletion.<br>
 
 #### Level 1: The Lexicographically `root`
 
 Starting at the root level. In a Red-Black Tree our entry point into the tree is *`Turtwig`*.<br>
-`Turtwig` is the `first key` inserted into the binary search tree.<br>
+`Turtwig` becomes the `root` of the `Red-Black Tree`. A *Red-Black Tree* maintains the properties of a `Binary Search Tree (BST)`, where each node is ordered based on *lexicographical* comparison of keys.<br>
 
 ...*Pump the breaks*... <br>
 Why is `Turtwig` the `Root` node of this `Red-Black Tree`? <br>
@@ -779,7 +781,7 @@ Code   ->	Glyph	Decimal	Octal	Description	           #
 U+0050 ->    P	     80	    0120	Latin Capital letter P	0049
 U+0054 ->    T	     84	    0124	Latin Capital letter T	0053
 ```
-This is because we are comparing the *whole* `string` of data, not just the Pokemon character names.<br>
+This is because we are comparing the *whole* `string` of data, not just the Pokémon character names.<br>
 
 This is how I am thinking of it:<br>
 *lexicographically* where `smaller` than the proceeding alphabetical character...<br>
@@ -788,11 +790,11 @@ Turtwig vs Pikachu
 0000001    1111110
 
 ```
-In the above section I thinking that Turtwig is less than Pikachu because, the letters in Pikachu's name: `Pikach` have a unicode value less than the letters in Turtwig's name: `Turtwi`. So, to me Pikachu recieves a value indicator of `"1"`. Meaning Turtwig has less positive values. <br>
+In the above section, I think that Turtwig is less than Pikachu because the letters in Pikachu's name: `Pikach` have a Unicode value *greater than* the letters in Turtwig's name: `Turtwi`. So, to me, Pikachu receives a value indicator of `"1"`. Meaning Turtwig has less positive values. <br>
 
 ...Ok!...<br>
 
-The code compares the *whole* string of combined data, including the parethises, comma, equals symbols etc.: <br>
+The code compares the *whole* string of combined data, including the parentheses, comma, equals symbols, etc.: <br>
 
 ```
 Pikachu (  Electric  , 🟨 = Bright Yellow)
@@ -823,7 +825,7 @@ I am not too sure if I would or should line up the character equally to visually
 - **Level 12**: `Chespin (Grass, 🟩 = Grass Green) (black)`
 - **Level 13**: `Corviknight (Flying, 🟦 = Sky Blue) (red)`
 
-
+*Levels* `1` to `13` show a `balanced` structure, where `nodes` *alternate* between `red` and `black`. The `balancing` ensures that no *path* from the `root` to a `leaf` is more than twice as long as any other *path*.<br>
 
 ```
 Enter a command: display
@@ -872,6 +874,14 @@ Red-Black Tree Structure:
    |     |  |  `- Sprigatito (Grass, 🟩 = Grass Green) (red)
    |     `- Treecko (Grass, 🟩 = Grass Green) (black)
    `- Zoroark (Dark, ⬛ = Dark Gray) (red)
+   |     |- Squirtle (Water, 🟦 = Aqua Blue) (red)
+   |     |  |- Solgaleo (Steel, 🔳 = Steel Blue) (black)
+   |     |  |  `- Sprigatito (Grass, 🟩 = Grass Green) (red)
+   |     `- Treecko (Grass, 🟩 = Grass Green) (black)
+   `- Zoroark (Dark, ⬛ = Dark Gray) (red)
+   |     `- Treecko (Grass, 🟩 = Grass Green) (black)
+   `- Zoroark (Dark, ⬛ = Dark Gray) (red)
+   `- Zoroark (Dark, ⬛ = Dark Gray) (red)
       |- Zekrom (Electric, 🟨 = Bright Yellow) (black)
       |  |- Yveltal (Dark, ⬛ = Dark Gray) (red)
       |  |  |- Xerneas (Fairy, 🟪 = Pink) (black)
@@ -893,7 +903,7 @@ Red-Black Tree Structure:
 
 - **Use Cases:**  
   - Maintaining a balanced tree structure dynamically.
-  - Ensures that the height of the tree remain logarthmic, avoiding performance degradation.
+  - Ensures that the height of the tree remains logarithmic, avoiding performance degradation.
   - Ideal for implementing ordered maps, sets, or associative containers.
 
 ---
