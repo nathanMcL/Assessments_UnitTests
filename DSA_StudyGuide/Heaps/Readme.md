@@ -112,3 +112,4 @@ Using the Python scripts: <br>
 
 - [Python Data Structures](https://docs.python.org/3/tutorial/datastructures.html)  
 - [Python Collections](https://docs.python.org/3/library/collections.html#collections.deque)
+- [Heap, Priority Que](https://docs.python.org/3/library/heapq.html)
