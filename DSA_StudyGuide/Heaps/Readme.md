@@ -14,9 +14,9 @@ Located in this sub-directory:  <br>
 `DSA_StudyGuide\DSA_Text_files\see_test_files.txt`  <br>
 
 Using the Python scripts: <br>
-`heap.py`: Main program file. 
-`heap_min.py`: Minimum Heap Method
-`heap_max.py`: Maximum Heap Method
+`heap.py`: Main program file. <br> 
+`heap_min.py`: Minimum Heap Method<br> 
+`heap_max.py`: Maximum Heap Method<br>
 
 
 ---
