@@ -201,53 +201,6 @@ So, back to my previous thought. To completly `"sort"` the `heap` (minimum or ma
 
 
 
----
-
-### Heap Big`O`
-
-- **Big`O` Runtime**:  
-  - **Access (Peek)**: `O(1)`  
-  - **Insertion**: `O(log n)`  
-  - **Deletion**: `O(log n)`  
-
-- **Use Cases**:  
-  - Implementing priority queues.  
-  - Finding the smallest or largest element efficiently (min-heap or max-heap).  
-  - Scheduling tasks where priority determines execution order.  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-## Noted Sources
-
-- [Python Data Structures](https://docs.python.org/3/tutorial/datastructures.html)  
-- [Python Collections](https://docs.python.org/3/library/collections.html#collections.deque)
-- [Heaps](https://docs.python.org/3/library/heapq.html)
-
-
-
 
 
 
