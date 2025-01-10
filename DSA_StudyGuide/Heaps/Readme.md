@@ -170,7 +170,7 @@ Left_C  Right_C
 
 7. Step 7: Insert `"2"`.<br>
 Recall `"2"` is the last element in the unsorted array: `[5, 7, 3, 11, 8, 9, 2]`<br>
-Two is also the smallest number. Since `2 < 3`, we swap `2` with `3`. Then, making `3` the `right-child` of two, moving `5` to the last `node` posisiton.<br> 
+Two is also the smallest number. Since `2 < 3`, we swap `2` with `3`. Then, making `3` the `right-child` of two, moving `5` to the last `node` position.<br> 
 
 ```
      Root
