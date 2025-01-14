@@ -338,7 +338,7 @@ Heap after extraction:
 ``` 
 Enter a command: n_smallest 5
 
-5 Largest elements in the heap:
+5 Smallest elements in the heap:
  Bulbasaur - 29.5%
  Butterfree - 22.9%
  Celebi - 6.5%
