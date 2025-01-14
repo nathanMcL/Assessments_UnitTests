@@ -185,7 +185,166 @@ Left_C  Right_C
 So, back to my previous thought. To completly `"sort"` the `heap` (minimum or maximum) you would need to continue the process of extracting the elements until the list is sorted (`heap sort`).<br>
 
 
+### Minimum Heap: `heap_min.py`
 
+#### Step 1:
+
+Simulate the Minimum Heap Algorithm<br>
+Loaded Pokémon Data:<br>
+
+```
+ Pikachu
+ Charmander
+ Bulbasaur
+ Squirtle
+ Eevee
+.
+.
+.
+Koraidon
+Miraidon
+```
+
+Loaded Win Percentages:<br>
+
+```
+ 17.8%
+ 2.1%
+ 29.5%
+ 11.4%
+ 5.7%
+ 22.9%
+ 31.2%
+ 16.3%
+.
+.
+.
+3.1%
+32.9%
+```
+
+### Step 2:
+
+Combined Pokémon with Win Percentages:<br>
+```
+ Pikachu - 17.8%
+ Charmander - 2.1%
+ Bulbasaur - 29.5%
+ Squirtle - 11.4%
+ Eevee - 5.7%
+ Butterfree - 22.9%
+.
+.
+.
+Koraidon - 3.1%
+Miraidon - 32.9%
+```
+
+### Step 3:
+
+Building Min-Heap...<br>
+
+Min-Heap Built:<br>
+```
+ Ampharos - 27.1%
+ Charmander - 2.1%
+ Bulbasaur - 29.5%
+ Deoxys - 24.3%
+ Corviknight - 4.2%
+ Butterfree - 22.9%
+.
+.
+.
+Palkia - 4.9%
+Miraidon - 32.9% 
+```
+
+### Step 5:
+
+Extracted Minimum Root Element:<br> 
+`Ampharos - 27.1%`<br>
+
+Heap after extraction:<br>
+```
+ Bulbasaur - 29.5%
+ Charmander - 2.1%
+ Butterfree - 22.9%
+ Deoxys - 24.3%
+ Corviknight - 4.2%
+ Giratina - 26.8%
+.
+.
+.
+Pawmi - 16.7%
+Palkia - 4.9%
+```
+
+### Step 6: `Add`
+
+`Add` an element to the heap.<br>
+Adding an `element` (or more data) puts the added element at the *Root* of the Step 2: `Combined Pokémon with Win Percentages:`<br>
+
+Enter a command: `add Absol - 7.3%`<br>
+
+```
+Element 'Absol - 7.3%' added to the heap:
+ Absol - 7.3%
+ Charmander - 2.1%
+ Bulbasaur - 29.5%
+ Deoxys - 24.3%
+ Corviknight - 4.2%
+.
+.
+.
+ Palkia - 4.9%
+ Miraidon - 32.9%
+```
+
+### Step 7: `Peek`
+
+What does *"Peek"* do?<br>
+
+  - The `peek` command is used to *view* the smallest (root) element `without` removing it.<br>
+
+Enter a command: `peek`<br>
+
+```
+Step 4: Peek Minimum Root Element: Absol - 7.3%
+```
+
+### Step 8: `Extract`
+
+  - The `extract` command is used to *extract* the smallest element from the heap.<br>
+ 
+```
+Step 5: Extracted Minimum Root Element: Absol - 7.3%
+
+Heap after extraction:
+ Bulbasaur - 29.5%
+ Charmander - 2.1%
+ Butterfree - 22.9%
+ Deoxys - 24.3%
+.
+.
+.
+ Pawmi - 16.7%
+ Palkia - 4.9%
+```
+
+### Step 8: `n_smallest` 
+ 
+ - With `n_smallest` we want to extract `n` values (test files only have 48 elements).<br>
+
+``` 
+Enter a command: n_smallest 5
+
+5 Largest elements in the heap:
+ Bulbasaur - 29.5%
+ Butterfree - 22.9%
+ Celebi - 6.5%
+ Charmander - 2.1%
+ Chespin - 28.4%
+```
 
 
 
