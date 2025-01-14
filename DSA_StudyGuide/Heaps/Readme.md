@@ -346,6 +346,14 @@ Enter a command: n_smallest 5
  Chespin - 28.4%
 ```
 
+---
+
+### Maximum Heap: `heap_max.py`
+
+#### Maximum Heap Step 1:
+
+Simulate the Maximum Heap Algorithm<br>
+
 
 
 
