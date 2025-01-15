@@ -23,9 +23,14 @@ Using the Python scripts: <br>
 
 ## The Plan...
 
-1. Using the test files we want to `read the file`.<br>
-2. Next we want to build/create/implement (What is a better descriptive word?) the `heap` (heap_code) from the `array_Pokemon_input.txt` file list of Pokémon character names and `sort` them alphabetically (They could be sorted other ways: lexicographically, length...)<br>
-3. After '`sorting`' *`combine`* that array Pokémon list with the `pokemon_winPercentages.txt` file's fake/arbitrary win percentages.<br> 
+1. Using the test files we want to load and `read the file`.<br>
+2. Next, we want to *`Combine`* the `heap` data: `array_Pokemon_input.txt` & `pokemon_winPercentages.txt` files.<br>
+3. `Build` the Minimum Heap.<br>
+4. `Extract` the minimum `root element`.
+5. `Sort`: `sort` them alphabetically (They could be sorted other ways: lexicographically, length...)<br> 
+
+    - (*TODO*) Have to redo the sort function. Once the heap is formed (`Alphabetical`, `Numerical`) *HOW* do we want to sort? Numerically, Alphabetically.?. What sort method would best be able to visually disribe the minimum heap?<br>  
+
 
 ```
 17.8%
@@ -38,7 +43,7 @@ Using the Python scripts: <br>
 
 ```
 
-4. Lastly, we want to conduct the `minimum` and `maximum` `heap` function by using the percentages to organize the data. <br>
+4. Lastly, we want to conduct the `minimum` and `maximum` `heap` function to visually describe how the two methods function with the data. <br>
 
 
 ---
@@ -170,7 +175,7 @@ Left_C  Right_C
 
 7. Step 7: Insert `"2"`.<br>
 Recall `"2"` is the last element in the unsorted array: `[5, 7, 3, 11, 8, 9, 2]`<br>
-Two is also the smallest number. Since `2 < 3`, we swap `2` with `3`. Then, making `3` the `right-child` of two, moving `5` to the last `node` position.<br> 
+Two is also the smallest number. Since `2 < 3`, we swap `2` with `3`. Then, making `3` the `right-child` of two, moving `5` to the last `node` posisiton.<br> 
 
 ```
      Root
@@ -184,6 +189,7 @@ Left_C  Right_C
 
 So, back to my previous thought. To completly `"sort"` the `heap` (minimum or maximum) you would need to continue the process of extracting the elements until the list is sorted (`heap sort`).<br>
 
+---
 
 ### Minimum Heap: `heap_min.py`
 
@@ -331,14 +337,14 @@ Heap after extraction:
  Palkia - 4.9%
 ```
 
-### Step 9: `n_smallest` 
+### Step 8: `n_smallest` 
  
  - With `n_smallest` we want to extract `n` values (test files only have 48 elements).<br>
 
 ``` 
 Enter a command: n_smallest 5
 
-5 Smallest elements in the heap:
+5 Largest elements in the heap:
  Bulbasaur - 29.5%
  Butterfree - 22.9%
  Celebi - 6.5%
@@ -353,6 +359,7 @@ Enter a command: n_smallest 5
 #### Maximum Heap Step 1:
 
 Simulate the Maximum Heap Algorithm<br>
+
 
 
 
