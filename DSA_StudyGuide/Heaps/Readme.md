@@ -331,7 +331,7 @@ Heap after extraction:
  Palkia - 4.9%
 ```
 
-### Step 8: `n_smallest` 
+### Step 9: `n_smallest` 
  
  - With `n_smallest` we want to extract `n` values (test files only have 48 elements).<br>
 
