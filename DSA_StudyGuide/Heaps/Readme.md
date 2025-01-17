@@ -358,7 +358,113 @@ Enter a command: n_smallest 5
 
 #### Maximum Heap Step 1:
 
-Simulate the Maximum Heap Algorithm<br>
+Similarly to the `minimum heap`, the `maximum heap` instead the *maximum heap* focuses on the elements within the combined (in this case) lists.<br>
+
+...Skipping steps 1 & 2...<br>
+
+#### Convert the Data for the `Maximum Heap`
+
+...So...<br>
+When we conduct a `minimum heap` function (the *smallest* number at the top) in Python, the `heap` naturally creates a `Mini-Heap`.<br>
+To Create the `Maximum-Heap` we have to *flip* it into a `Max-Heap`. That means we have to make the numbers `negative`, so the *largest* value appears at the top.<br>
+
+Helper function to *flip* percentages to `negative` number `tuples` (to store *both* the sorting value and original data) for the heap operation.<br>
+
+```
+def ctn_tuples(data):
+    converted = [(-float(item.split(' - ')[1].strip('%')), item) for item in data]
+    return converted
+```
+
+- This function "preps" the data for the `max-heap`.<br>
+- It takes the `Pokémone` data like "`Pikachu - 17.8%`" and turns the percentage into a `negative` number.<br>
+
+#### Build the `Maximum Heap`
+
+- This function `organizes` the Pokémon data into a Max-Heap.<br>
+- It first `converts` the data (using the previous function) and then rearranges it with `heapq.heapify()` to follow the heap rules.<br>
+- The `return` *builds* it and `prints` out the new `heap`. <br>
+
+```
+def build_max_heap(data):
+    print("\nStep 3: Building Max-Heap...")
+    max_heap = ctn_tuples(data)
+    heapq.heapify(max_heap)
+    print(f"\nMax-Heap Built:")
+    for _, item in max_heap:
+        print(f" {item}")
+    return max_heap
+```
+
+#### Adding data to the heap
+
+- This function lets you `add` a new `Pokemon` with its win percentage into the heap.<br>
+- Recall, with  the `Max-Heap` the percentage is *flipped*, turned `negative` so the heap stays a `Max-Heap`.<br>
+- The `heap` is then *automatically* rearranged to keep the strongest `Pokémon` on top.<br>
+
+`Command`: `add Garchomp - 35.5%` <br>
+
+```
+def add_to_heap(heap, item):
+    heapq.heappush(heap, (-float(item.split(' - ')[1].strip('%')), item))
+    print(f"\nElement '{item}' added to the heap:")
+    for _, h in heap:
+        print(f" {h}")
+```
+
+#### Let's `peek` at our *Strongest* `Pokemon`
+
+- In this function we can check which Pokemon has the highest win percentages *without* removing it.<br>
+- We are simply '`printing`' the *element* at the top of the `heap`.<br>
+
+`Command`: `peek`<br>
+
+```
+def peek_max(heap):
+    if heap:
+        print(f"\nStep 4: Peek Maximum Root Element: {heap[0][1]}")
+    else:
+        print("Error: Heap is empty.")
+```
+
+#### `Removing` the *Strongest* Pokemon
+
+- In this function we want to `remove` and `show` the Pokemon with the `highest` *win percentage*.<br>
+- The `heap` is *reshuffled* after `removal` to keep the next strongest *Pokemon* at the top.<br>
+
+`Command`: `extract`<br>
+
+`Before`: *Garchomp* is at the `top`.<br>
+`After`: *Garchomp* is `removed`, and the *next* `strongest` Pokemon takes its place.<br>
+
+```
+def extract_max(heap):
+    if not heap:
+        print("Error: No heap to extract from.")
+        return None
+    max_element = heapq.heappop(heap)[1]
+    print(f"\nStep 5: Extracted Maximum Root Element: {max_element}")
+    print(f"\nHeap after extraction:")
+    for _, item in heap:
+        print(f" {item}")
+    return max_element
+```
+
+#### Finding the `Top` *Pokemon*
+
+- This function lets you see the `top` *N* of Pokemon without changing the heap.<br>
+- It uses `heapq.nlargest()` to quickly find the *strongest* Pokemon.<br>
+
+`Command`: `n_largest 3`<br>
+
+```
+def n_largest(heap, n):
+    largest = heapq.nlargest(n, heap)
+    print(f"\n{n} Largest elements in the heap:")
+    for _, item in largest:
+        print(f" {item}")
+```
+
 
 
 
