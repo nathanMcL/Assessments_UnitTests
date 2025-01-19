@@ -251,6 +251,7 @@ Miraidon - 32.9%
 Building Min-Heap...<br>
 
 Min-Heap Built:<br>
+(TODO: Check this. This is a mini heap, the lowest number should be on the top... maybe I inputted the wrong example... double check)
 ```
  Ampharos - 27.1%
  Charmander - 2.1%
