@@ -251,39 +251,39 @@ Miraidon - 32.9%
 Building Min-Heap...<br>
 
 Min-Heap Built:<br>
-(TODO: Check this. This is a mini heap, the lowest number should be on the top... maybe I inputted the wrong example... double check)
+
 ```
- Ampharos - 27.1%
- Charmander - 2.1%
- Bulbasaur - 29.5%
- Deoxys - 24.3%
- Corviknight - 4.2%
- Butterfree - 22.9%
+Rayquaza - 1.5%
+Rowlet - 1.9%
+Keldeo - 2.7%
+Charmander - 2.1%
+Corviknight - 4.2%
+Koraidon - 3.1%
 .
 .
 .
-Palkia - 4.9%
+Butterfree - 22.9%
 Miraidon - 32.9% 
 ```
 
 ### Step 5:
 
 Extracted Minimum Root Element:<br> 
-`Ampharos - 27.1%`<br>
+`1.5, Rayquaza - 1.5%`<br>
 
 Heap after extraction:<br>
 ```
- Bulbasaur - 29.5%
- Charmander - 2.1%
- Butterfree - 22.9%
- Deoxys - 24.3%
- Corviknight - 4.2%
- Giratina - 26.8%
+ 1.9, Rowlet - 1.9%
+ 2.1, Charmander - 2.1%
+ 2.7, Keldeo - 2.7%
+ 5.2, Xerneas - 5.2%
+ 4.2, Corviknight - 4.2%
+ 3.1, Koraidon - 3.1%
 .
 .
 .
-Pawmi - 16.7%
-Palkia - 4.9%
+18.5, Dialga - 18.5%
+22.9, Butterfree - 22.9%
 ```
 
 ### Step 6: `Add`
@@ -295,16 +295,16 @@ Enter a command: `add Absol - 7.3%`<br>
 
 ```
 Element 'Absol - 7.3%' added to the heap:
- Absol - 7.3%
- Charmander - 2.1%
- Bulbasaur - 29.5%
- Deoxys - 24.3%
- Corviknight - 4.2%
+Rowlet - 1.9%
+Charmander - 2.1%
+Keldeo - 2.7%
+Xerneas - 5.2%
+Corviknight - 4.2%
 .
 .
 .
- Palkia - 4.9%
- Miraidon - 32.9%
+Butterfree - 22.9%
+Absol - 7.3%
 ```
 
 ### Step 7: `Peek`
@@ -324,18 +324,19 @@ Step 4: Peek Minimum Root Element: Absol - 7.3%
   - The `extract` command is used to *extract* the smallest element from the heap.<br>
  
 ```
-Step 5: Extracted Minimum Root Element: Absol - 7.3%
+Step 5: Extracted Minimum Root Element: 1.9, Rowlet - 1.9%
 
 Heap after extraction:
- Bulbasaur - 29.5%
- Charmander - 2.1%
- Butterfree - 22.9%
- Deoxys - 24.3%
+2.1, Charmander - 2.1%
+4.2, Corviknight - 4.2%
+2.7, Keldeo - 2.7%
+5.2, Xerneas - 5.2%
+5.7, Eevee - 5.7%
 .
 .
 .
- Pawmi - 16.7%
- Palkia - 4.9%
+Pawmi - 16.7%
+Palkia - 4.9%
 ```
 
 ### Step 9: `n_smallest` 
@@ -346,11 +347,11 @@ Heap after extraction:
 Enter a command: n_smallest 5
 
 5 Largest elements in the heap:
- Bulbasaur - 29.5%
- Butterfree - 22.9%
- Celebi - 6.5%
- Charmander - 2.1%
- Chespin - 28.4%
+2.1, Charmander - 2.1%
+2.7, Keldeo - 2.7%
+3.1, Koraidon - 3.1%
+3.8, Togepi - 3.8%
+4.2, Corviknight - 4.2%
 ```
 
 ---
@@ -363,13 +364,29 @@ Similarly to the `minimum heap`, the `maximum heap` instead the *maximum heap* f
 
 ...Skipping steps 1 & 2...<br>
 
-#### Convert the Data for the `Maximum Heap`
+#### Convert the Data for the `Maximum Heap` to *tuples*
 
 ...So...<br>
 When we conduct a `minimum heap` function (the *smallest* number at the top) in Python, the `heap` naturally creates a `Mini-Heap`.<br>
 To Create the `Maximum-Heap` we have to *flip* it into a `Max-Heap`. That means we have to make the numbers `negative`, so the *largest* value appears at the top.<br>
 
 Helper function to *flip* percentages to `negative` number `tuples` (to store *both* the sorting value and original data) for the heap operation.<br>
+
+`Min-Heap Built`:     ---  `Max-Heap Built`:<br>
+```
+Rayquaza - 1.5%             Miraidon - 32.9%
+Rowlet - 1.9%               Treecko - 32.4%
+Keldeo - 2.7%               Pidgeot - 31.2%
+Charmander - 2.1%           Yveltal - 31.9%
+Corviknight - 4.2%          Lucario - 30.8%
+Koraidon - 3.1%             Bulbasaur - 29.5%
+.                           .
+.                           .
+.                           .
+Butterfree - 22.9%          Koraidon - 3.1%
+Miraidon - 32.9%            Togepi - 3.8%
+                      ---
+```
 
 ```
 def ctn_tuples(data):
