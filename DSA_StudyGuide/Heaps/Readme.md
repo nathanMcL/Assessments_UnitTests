@@ -414,6 +414,60 @@ def build_max_heap(data):
     return max_heap
 ```
 
+...Output...<br>
+
+```
+Step 3: Building Max-Heap...
+
+Max-Heap Built:
+ Miraidon - 32.9%
+ Treecko - 32.4%
+ Pidgeot - 31.2%
+ Yveltal - 31.9%
+ Lucario - 30.8%
+```
+
+Step 5: `Extracted Maximum Root Element`: `Miraidon - 32.9%`<br>
+
+```
+def extract_max(heap):
+    if not heap:
+        print("Error: No heap to extract from.")
+        return None
+    max_element = heapq.heappop(heap)[1] # Heap Pop
+    print(f"\nStep 5: Extracted Maximum Root Element: {max_element}")
+    print(f"\nHeap after extraction:")
+    for _, item in heap:
+        print(f" {item}")
+    return max_element
+```
+
+...Output...<br>
+
+Notice in this section that the Heap *elements* are not in order...<br>
+That is because in the *Minimum Heap* `heap_min` we have the code such that it orders the *heap* in numerical order.<br>
+
+In *Maximum Heap* `heap_max` the code *is NOT* in numerical order, therfore the `extraction` is *extracting*  the *Maximum Element*.<br>    
+
+```
+Heap after extraction:
+ Treecko - 32.4%
+ Yveltal - 31.9%
+ Pidgeot - 31.2%
+ Deoxys - 24.3%
+ Lucario - 30.8%
+.
+.
+.
+Corviknight - 4.2%
+Turtwig - 7.6%
+Cyndaquil - 13.0%
+Zarude - 9.8%
+Eevee - 5.7%
+Pawmi - 16.7%
+Koraidon - 3.1%
+```
+
 #### Adding data to the heap
 
 - This function lets you `add` a new `Pokemon` with its win percentage into the heap.<br>
