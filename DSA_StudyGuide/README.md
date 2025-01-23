@@ -30,8 +30,8 @@ Using Python coded scripts: <br>
 
 1. **Arrays**: `List Manipulation` <br>
 2. **Linked Lists**:  `Merging`, `Reverseing`, & `Comparing` <br>
-3. **Tree** searches: `Depth-First Search (DFS)`, `Breadth-First Search (BFS)`, `Tree`, `Binary Tree`, `Binary Search Tree`, `Red-Black Tree`, etc.<br>
-4. **Heaps**: `` <br>
+3. **Tree** searches: `Depth-First Search (DFS)`, `Breadth-First Search (BFS)`, `Tree`, `Binary Tree`, `Binary Search Tree`, `Red-Black Tree`<br>
+4. **Heaps**: `heap.py`, `heap_min.py`, `heap_max.py` <br>
 5. **Hash Tables**: `` <br>
 
 ---
